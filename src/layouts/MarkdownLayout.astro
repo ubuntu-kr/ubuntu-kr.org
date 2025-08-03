@@ -1,0 +1,27 @@
+---
+import type { MarkdownLayoutProps } from 'astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  description: string;
+}>;
+const { frontmatter } = Astro.props;
+---
+<style is:global>
+    table {
+        display: block;
+        overflow-x: auto;
+        word-break: keep-all;
+    }
+</style>
+<PageLayout title={frontmatter.title} description={frontmatter.description}>
+<div class="p-section p-strip is-shallow">
+        <div class="grid-row">
+            <h1>{frontmatter.title}</h1>
+            <p>{frontmatter.description}</p>
+            <hr class="p-rule">
+            <slot />
+        </div>
+    </div>
+</PageLayout>

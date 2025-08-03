@@ -1,0 +1,62 @@
+---
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+const lang = Astro.currentLocale;
+const config = WebsiteConfig(lang as keyof typeof languages);
+import { useTranslations } from "@/i18n/utils";
+const t = useTranslations(lang as keyof typeof languages);
+
+async function getDiscourseData(feedUrl: string) {
+    const response = await (await fetch(feedUrl)).json();
+    const eventsData = response["topic_list"]["topics"] as any[];
+    return eventsData.filter(i => new Date(i["event_starts_at"]) >= new Date())
+}
+
+const eventsFeedData = await getDiscourseData(config.feeds.eventsFeedUrl);
+---
+
+<div class="p-section">
+    <hr class="p-rule is-fixed-width" />
+    <div class="p-section--shallow">
+        <div class="row--50-50-on-large">
+            <div class="col">
+                <h2><a href="https://discourse.ubuntu-kr.org/c/scheds-and-events/events/43/">{`${t('home.events.title')} ›`}</a></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="p-equal-height-row--wrap">
+                {
+                    eventsFeedData.length > 0 ? (
+                        eventsFeedData.slice(0, 4).map((item) => (
+                            <div class="p-equal-height-row__col">
+                                <a
+                                    href={`https://discourse.ubuntu-kr.org/t/${item.slug}/${item.id}`}
+                                    target="_blank"
+                                    class="p-link--soft p-equal-height-row__col"
+                                >
+                                    <h3 class="p-equal-height-row__item">
+                                        {item.title}
+                                        <i class="p-icon--external-link" />
+                                    </h3>
+                                   
+                                    <hr />
+                                    <p class="p-equal-height-row__item auto-format-datetime">
+                                        {item.event_starts_at}
+                                    </p>
+                                </a>
+                            </div>
+                        ))
+                    ) : (
+                        <div class="p-equal-height-row__col">
+                            <p class="p-equal-height-row__item">{"EMPT"}</p>
+                        </div>
+                    )
+                }
+            </div>
+        </div>
+    </div>
+</div>
+    

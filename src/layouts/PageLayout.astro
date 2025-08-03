@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navigation from "@/components/Navigation.astro";
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+import { getUrlWithoutLang } from "@/i18n/utils";
+const lang = Astro.currentLocale;
+const config = WebsiteConfig(lang as keyof typeof languages);
+const page = getUrlWithoutLang(Astro.url);
+const { title, description } =  Astro.props;
+---
+
+<Layout title={title} description={description}>
+    <Navigation
+        menu={config.navigation.menu()}
+        rightMenu={config.navigation.rightMenu(page)}
+    />
+    <slot />
+    <footer class="l-footer--sticky p-strip--dark">
+        <div class="u-fixed-width">
+            <h2>{config.metadata.title}</h2>
+        </div>
+        <nav class="row" aria-label="Footer">
+            <div class="has-cookie">
+                <p>
+                    {config.footer().copyright}
+                </p>
+                <ul class="p-inline-list--middot">
+                    {config.footer().links.map(item => (
+                    <li class="p-inline-list__item">
+                        <a href={item.href}><small>{item.label}</small></a>
+                    </li>
+                    ))}
+                </ul>
+                <span class="u-off-screen"
+                    ><a href="#">Go to the top of the page</a></span
+                >
+            </div>
+        </nav>
+    </footer>
+</Layout>

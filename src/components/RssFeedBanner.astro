@@ -1,0 +1,103 @@
+---
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+const lang = Astro.currentLocale;
+const config = WebsiteConfig(lang as keyof typeof languages);
+import { useTranslations } from "@/i18n/utils";
+const t = useTranslations(lang as keyof typeof languages);
+
+import jsdom from "jsdom";
+const { JSDOM } = jsdom;
+const window = new JSDOM().window;
+
+async function getRssFeedData(feedUrl: string, type: string) {
+    const rssFeedRaw = await fetch(feedUrl);
+    const rssFeedXml = new window.DOMParser().parseFromString(
+        await rssFeedRaw.text(),
+        "text/xml",
+    );
+    const rssItemsXml = rssFeedXml.querySelectorAll("item");
+    const rssItems = new Array();
+    rssItemsXml.forEach((el: Element) => {
+        rssItems.push({
+            title: el.querySelector("title")?.textContent,
+            link: el.querySelector("link")?.textContent,
+            date: el.querySelector("pubDate")?.textContent,
+            content: el
+                .querySelector("description")
+                ?.textContent?.replace(/(<([^>]+)>)/gi, ""),
+            type: type,
+        });
+    });
+    rssItems.sort((a, b) => {
+        if (Date.parse(a.date) > Date.parse(b.date)) return -1;
+        else return 1;
+    });
+    return rssItems;
+}
+
+const noticeBoardFeedData = await getRssFeedData(config.feeds.noticeBoard, t("home.feeds.notice"));
+const blogFeedData = await getRssFeedData(config.feeds.blogFeedUrl, t("home.feeds.blog"));
+const freeBoardData = await getRssFeedData(config.feeds.freeBoard, t("home.feeds.forum"));
+var rssDataList = new Array();
+rssDataList = rssDataList
+    .concat(noticeBoardFeedData.slice(0, 1))
+    .concat(blogFeedData.slice(0, 1))
+    .concat(freeBoardData.slice(0, 2));
+---
+
+<div class="p-section">
+    <hr class="p-rule is-fixed-width" />
+    <div class="p-section--shallow">
+        <div class="row--50-50-on-large">
+            <div class="col">
+                <h2><a href="https://discourse.ubuntu-kr.org/">{`${t("home.feeds.title")} ›`}</a></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="p-equal-height-row--wrap">
+                {
+                    rssDataList.length > 0 ? (
+                        rssDataList.map((item) => (
+                            <div class="p-equal-height-row__col">
+                                <a
+                                    href={item.link}
+                                    target="_blank"
+                                    class="p-link--soft p-equal-height-row__col"
+                                >
+                                    <p
+                                        class="p-equal-height-row__item"
+                                    >
+                                        {item.type}
+                                    </p>
+                                    <h3 class="p-equal-height-row__item">
+                                        {item.title}
+                                        <i class="p-icon--external-link" />
+                                    </h3>
+                                    <p
+                                        class="p-equal-height-row__item"
+                                        style="text-overflow: ellipsis; overflow: hidden; max-height: 5em;"
+                                    >
+                                        {item.content}
+                                    </p>
+                                    <hr />
+                                    <p class="p-equal-height-row__item auto-format-datetime">
+                                        {item.date}
+                                    </p>
+                                </a>
+                            </div>
+                        ))
+                    ) : (
+                        <div class="p-equal-height-row__col">
+                            <p class="p-equal-height-row__item">{"EMPT"}</p>
+                        </div>
+                    )
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

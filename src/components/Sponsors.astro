@@ -1,0 +1,46 @@
+---
+import { sponsors } from "@/data/sponsors";
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+import SponsorLogoAndModal from "@/components/SponsorLogoAndModal.tsx";
+const lang = Astro.currentLocale;
+const config = WebsiteConfig(lang as keyof typeof languages);
+import { useTranslations } from "@/i18n/utils";
+const t = useTranslations(lang as keyof typeof languages);
+---
+
+<div class="p-section">
+    <div class="row"><h2>{t("banner.sponsors")}</h2></div>
+    {
+        (
+            <div class="p-section--shallow">
+                <div class="row">
+                    <hr class="p-rule" />
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            {sponsors.map((item, idx) => (
+                                <div
+                                    class={`col-3 col-medium-2 col-small-2`}
+                                    style={{ alignContent: "center" , backgroundColor: "#ffffff30"}}
+                                >
+                                    <SponsorLogoAndModal
+                                        name={item.name}
+                                        index={idx}
+                                        logoImageSrc={item.logoUrl}
+                                        description={item.description ?? ""}
+                                        url={item.url}
+                                        level=""
+                                        showPopup={true}
+                                        client:only="react"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+</div>

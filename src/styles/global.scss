@@ -1,0 +1,32 @@
+@use "pretendard/dist/web/variable/pretendardvariable.css";
+    
+// Import the framework
+@import 'node_modules/vanilla-framework';
+
+// Import Web Font for Korean glyphs
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+// Include all of Vanilla Framework
+@include vanilla;
+@include vf-p-icon-tag;
+@include vf-p-icon-topic;
+
+
+// Apply Keep-All and Web Font to Korean words
+body {
+	word-break: keep-all;
+	font-family: "Ubuntu variable", Ubuntu, Pretendard, "Pretendard Variable", -apple-system, Segoe UI, Roboto, Oxygen, Cantarell, Fira Sans, Droid Sans, "Helvetica Neue",sans-serif;
+	font-display: swap;
+}
+
+.p-media-object--large .p-media-object__image {
+	object-fit: cover;
+	width: 100%;
+	aspect-ratio: 1/1;
+}
+
+.p-navigation__toggle--open, .p-navigation__toggle--close {
+	height: 100%;
+	text-align: center;
+	line-height: 2;
+}

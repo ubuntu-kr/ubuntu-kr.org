@@ -1,0 +1,156 @@
+---
+import { WebsiteConfig } from "@/config";
+import UbuntuKrCircleWhite from "@/assets/UbuntuKrCircleWhite.svg"
+import { languages } from "@/i18n/ui";
+
+export interface MenuItem {
+    label: string;
+    href?: string;
+    selected?: boolean;
+    items?: DropdownItem[];
+}
+export interface DropdownItem {
+    label: string;
+    href?: string;
+    divider?: boolean;
+    selected?: boolean;
+}
+
+const lang = Astro.currentLocale;
+const config = WebsiteConfig(lang as keyof typeof languages);
+
+const {
+    menu = [],
+    rightMenu = [],
+} = Astro.props;
+---
+
+<header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__tagged-logo">
+                <a class="p-navigation__link" href="/">
+                    <div class="p-navigation__logo-tag">
+                        <img
+                            class="p-navigation__logo-icon"
+                            src={UbuntuKrCircleWhite.src}
+                            alt=""
+                        />
+                    </div>
+                    <span class="p-navigation__logo-title">{config.metadata.title}</span>
+                </a>
+            </div>
+            <a href="#navigation"
+                class="p-navigation__toggle--open" aria-haspopup="menu" aria-expanded="false"
+                title="menu"><i class="p-icon--chevron-down"></i></a>
+            <a href="#navigation-closed"
+                class="p-navigation__toggle--close" aria-haspopup="menu" aria-expanded="true"
+                title="close menu"><i class="p-icon--chevron-up"></i></a>
+        </div>
+        <nav class="p-navigation__nav" aria-label="Navigation">
+            <ul class="p-navigation__items" aria-label="주요 메뉴">
+            {menu.map((navItem: MenuItem, index: number) => (
+                (navItem.items?.length ?? 0) <= 0 ? (
+                    <li class="p-navigation__item">
+                        <a class="p-navigation__link" href={navItem.href}>{navItem.label}</a>
+                    </li>
+                ) : (
+                    <li class="p-navigation__item--dropdown-toggle" id={`link-${index}`}>
+                        <a href={`#link-${index}-menu`}
+                            aria-controls={`link-${index}-menu`} aria-haspopup="menu"
+                            class="p-navigation__link">{navItem.label}</a>
+                        <ul class="p-navigation__dropdown"
+                            id={`link-${index}-menu`}
+                            aria-hidden="true">
+                            {(navItem.items ?? []).map((subMenuItem)=>(
+                            <li>
+                                <a href={subMenuItem.href} class="p-navigation__dropdown-item">{subMenuItem.label}</a>
+                            </li>
+                            ))}
+                        </ul>
+                    </li>
+                )
+            ))}
+                
+            </ul>
+            <ul class="p-navigation__items" aria-label="부 메뉴">
+                {rightMenu.map((navItem: MenuItem, index: number) => (
+                    (navItem.items?.length ?? 0) <= 0 ? (
+                        <li class="p-navigation__item is-right-shifted">
+                            <a class="p-navigation__link" href={navItem.href}>{navItem.label}</a>
+                        </li>
+                    ) : (
+                        <li class="p-navigation__item--dropdown-toggle is-right-shifted" id={`rlink-${index}`}>
+                            <a href={`#rlink-${index}-menu`}
+                                aria-controls={`rlink-${index}-menu`}
+                                class="p-navigation__link">{navItem.label}</a>
+                            <ul class="p-navigation__dropdown--right"
+                                id={`rlink-${index}-menu`}
+                                aria-hidden="true">
+                                {(navItem.items ?? []).map((subMenuItem)=>(
+                                <li>
+                                    <a href={subMenuItem.href} class="p-navigation__dropdown-item">{subMenuItem.label}</a>
+                                </li>
+                                ))}
+                            </ul>
+                        </li>
+                    )
+                ))}
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    function toggleDropdown(toggle: HTMLElement, open: boolean) {
+        var parentElement = toggle.parentNode as HTMLElement;
+        var dropdown = document.getElementById(
+            toggle.getAttribute("aria-controls") ?? "",
+        );
+        dropdown?.setAttribute("aria-hidden", (!open).toString());
+
+        if (open) {
+            parentElement.classList.add("is-active");
+        } else {
+            parentElement.classList.remove("is-active");
+        }
+    }
+
+    function closeAllDropdowns(toggles: HTMLElement[]) {
+        toggles.forEach(function (toggle) {
+            toggleDropdown(toggle, false);
+        });
+    }
+
+    function handleClickOutside(toggles: HTMLElement[], containerClass: string) {
+        document.addEventListener("click", function (event) {
+            var target = event.target as Element;
+
+            if (target?.closest) {
+                if (!target.closest(containerClass)) {
+                    closeAllDropdowns(toggles);
+                }
+            }
+        });
+    }
+
+    function initNavDropdowns(containerClass: string) {
+        var toggles = [].slice.call(
+            document.querySelectorAll(containerClass + " [aria-controls]"),
+        );
+
+        handleClickOutside(toggles, containerClass);
+
+        toggles.forEach(function (toggle: HTMLElement) {
+            toggle.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const shouldOpen = !(toggle?.parentNode as HTMLElement)?.classList.contains("is-active");
+                closeAllDropdowns(toggles);
+                toggleDropdown(toggle, shouldOpen);
+            });
+        });
+    }
+
+    initNavDropdowns(".p-navigation__item--dropdown-toggle");
+</script>

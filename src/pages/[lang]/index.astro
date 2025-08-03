@@ -1,0 +1,11 @@
+---
+import { languages } from "@/i18n/ui";
+
+export function getStaticPaths() {
+    return Object.keys(languages).map((lang) => ({
+        params: { lang },
+    }));
+}
+import MainPage from "@/components/MainPage.astro"
+---
+<MainPage lang={Astro.currentLocale}/>
