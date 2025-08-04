@@ -4,99 +4,187 @@ title: "우분투 내려받기"
 description: "최신 버전의 우분투를 내려받아 다양한 환경에 설치하여 사용할 수 있습니다."
 ---
 
-# 버전 및 요구사양
-## 우분투 24.04 LTS
-가장 최근 출시된 LTS(장기 지원) 버전인 우분투 24.04 LTS는 5년간 유지보수 및 보안 업데이트가 무료로 제공됩니다. (Ubuntu Pro 등 구독 시 최대 12년)
-대부분의 경우, 안정적인 사용을 위해 LTS 버전 사용이 권장됩니다.
+import HeroPhotoOnLeft from "@/components/HeroPhotoOnLeft.astro";
+import HeroPhotoOnRight from "@/components/HeroPhotoOnRight.astro";
+import UbuntuDesktopImage from "@/assets/showcases/desktop.png";
+import UbuntuServerImage from "@/assets/showcases/server.webp";
+import UbuntuWslImage from "@/assets/showcases/wsl.webp";
+import UbuntuCloudImage from "@/assets/showcases/cloud.png";
+import UbuntuCoreImage from "@/assets/showcases/embedded.webp";
+import UbuntuContainerImage from "@/assets/showcases/container.webp";
 
-- [우분투 24.04 LTS 릴리즈 노트 보기](https://discourse.ubuntu.com/t/noble-numbat-release-notes/39890)
+<div class="p-section">
+  <div class="p-section--shallow">
+    <div class="grid-row">
+      <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+        <h2>버전 선택하기</h2>
+      </div>
+      <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+        <p>
+          장기 지원(LTS, Long Term Support) 릴리즈와 중간 릴리즈(Interim Releases)중 사용 상황에 따라 적합한 릴리즈를 선택하세요.
+          우분투 출시 및 지원 주기는 [Ubuntu release cycle (영어)](https://ubuntu.com/about/release-cycle) 에서 확인하실 수 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
 
-## 우분투 25.04
-새로운 기능을 먼저 사용해 보고 싶다면, 가장 최신 버전인 우분투 25.04를 사용해 보세요. 출시 후 9개월간 유지보수 및 보안 업데이트가 무료로 제공됩니다.
+  <div class="p-pricing-block--50-50">
+    <div class="p-pricing-block__tier">
+      <div class="p-pricing-block__section">
+        <div class="p-section--shallow">
+          <h3 class="p-heading--4">
+            장기 지원 릴리즈
+            <br/>
+            <span class="u-text--muted">우분투 24.04 LTS</span>
+          </h3>
+        </div>
+      </div>
+      <div class="p-pricing-block__section">
+        <p>기본 5년, 최대 12년 업데이트가 제공되며, 안정적으로 운영되어야 하는 환경에 적합합니다.</p>
+      </div>
+      <div class="p-pricing-block__section">
+        <p class="u-text--muted">주요 특징</p>
+        <hr class="p-rule--muted u-no-margin--bottom"/>
+        <ul class="p-list--divided">
+          <li class="p-list__item is-ticked">5년(무료), 최대 12년 까지(유료) 업데이트 제공</li>
+          <li class="p-list__item is-ticked">2년 간격 짝수년도 4월 출시</li>
+          <li class="p-list__item is-ticked">리눅스 커널 6.8</li>
+          <li class="p-list__item is-ticked">안정성에 초점을 맞춘 릴리즈</li>
+        </ul>
+      </div>
+      <div class="p-pricing-block__section"><a href="https://discourse.ubuntu.com/t/noble-numbat-release-notes/39890">릴리즈 노트 확인</a></div>
+    </div>
 
-[우분투 25.04 릴리즈 노트 보기](https://discourse.ubuntu.com/t/oracular-oriole-release-notes/44878)
+    <div class="p-pricing-block__tier">
+      <div class="p-pricing-block__section">
+        <div class="p-section--shallow">
+          <h3 class="p-heading--4">
+            중간 릴리즈
+            <br/>
+            <span class="u-text--muted">우분투 25.04</span>
+          </h3>
+        </div>
+      </div>
+      
+      <div class="p-pricing-block__section">
+        <p>9개월간 업데이트가 제공되며, 새로운 기능을 미리 확인해 보실 수 있습니다.</p>
+      </div>
+      <div class="p-pricing-block__section">
+        <p class="u-text--muted">주요 특징</p>
+        <hr class="p-rule--muted u-no-margin--bottom"/>
+        <ul class="p-list--divided">
+          <li class="p-list__item is-ticked">9개월간 업데이트 제공</li>
+          <li class="p-list__item is-ticked">6개월 마다 출시</li>
+          <li class="p-list__item is-ticked">리눅스 커널 6.11</li>
+          <li class="p-list__item is-ticked">새로운 기능 제공에 초점을 둔 릴리즈</li>
+        </ul>
+      </div>
+      <div class="p-pricing-block__section"><a href="https://discourse.ubuntu.com/t/oracular-oriole-release-notes/44878">릴리즈 노트 확인</a></div>
+    </div>
+    </div>
+</div>
 
-## 우분투 출시 및 지원 주기
-우분투는 새 버전이 매년 4월과 10월, 6개월 간격으로 새로 출시되며. 짝수 년도 4월, 2년 간격으로 장기 지원(LTS) 버전이 출시됩니다.
-장기 지원 버전은 5년간, 장기 지원 사이 출시되는 일번 버전은 9개월간 유지보수 및 보안 업데이트가 무료로 제공됩니다.
-우분투 홈페이지에서 각 버전별 지원 주기를 확인하실 수 있습니다.
+<HeroPhotoOnRight
+  title="우분투 데스크톱"
+  mainButtonLabel={"내려받기"} mainButtonHref={"https://ubuntu.com/download/desktop"}
+  subButtonLabel={"내려받기 (kr.archive.ubuntu.com)"} subButtonHref={"https://kr.archive.ubuntu.com/ubuntu-cd/HEADER.html"}
+  imageSrc={UbuntuDesktopImage.src}>
+우분투 데스크톱은 전세계 수백만대의 PC와 노트북에서 사용되고 있으며, GNOME 기반의 사용하기 쉬운 오픈소스 기반 리눅스 데스크톱 환경을 제공합니다. 
+Firefox, Chrome, Discord, Steam, OBS Studio 등 많은 사람들이 사용하는 애플리케이션 또한 이용 가능합니다. 
 
-[Ubuntu release cycle (영어)](https://ubuntu.com/about/release-cycle)
-
-## 요구 사양
-
+**요구 사양**
  - 최소 2GHz 듀얼 코어 프로세서와 4GB 시스템 메모리
  - 25GB 이상의 저장 장치 여유공간
  - 인터넷 연결은 있으면 좋습니다.
  - 설치 매체로 사용할 장치: DVD 드라이브, USB 디스크 등
+</HeroPhotoOnRight>
 
-# 내려받기
+<HeroPhotoOnLeft
+  title="우분투 서버"
+  mainButtonLabel={"내려받기"} mainButtonHref={"https://ubuntu.com/download/server"}
+  subButtonLabel={"내려받기 (ARM 서버용)"} subButtonHref={"https://ubuntu.com/download/server/arm"}
+  imageSrc={UbuntuServerImage.src}>
+우분투 서버는 데이터 센터, 퍼블릭 또는 프라이빗 클라우드에 경제적이고 기술적인 확장성을 제공합니다. 
+OpenStack 클라우드, Kubernetes 클러스터 또는 5만 노드 규모의 렌더 팜 등 어떤 환경을 구축하든 우분투 서버는 최고의 가치 확장 성능을 제공합니다.
 
-## 공식 홈페이지에서 내려받기
+**요구 사양**
+ - 최소 1GHz 프로세서와 1GB 시스템 메모리
+ - 5GB 이상의 저장 장치 여유공간
+ - 설치 매체로 사용할 장치: DVD 드라이브, USB 디스크 등
+</HeroPhotoOnLeft>
 
-[데스크탑](https://ubuntu.com/download/desktop)
-[서버](https://ubuntu.com/download/server)
-[Raspberry Pi](https://ubuntu.com/download/raspberry-pi)
-[사물인터넷 (Ubuntu Core)](https://ubuntu.com/download/iot)
+<HeroPhotoOnRight
+  title="WSL(Linux용 Windows 하위시스템)"
+  mainButtonLabel={"내려받기"} mainButtonHref={"https://ubuntu.com/desktop/wsl"}
+  subButtonLabel={"내려받기 (kr.archive.ubuntu.com)"} subButtonHref={"https://kr.archive.ubuntu.com/ubuntu-cd/HEADER.html"}
+  imageSrc={UbuntuWslImage.src}>
+WSL(Linux용 Windows 하위시스템)를 사용하여 Windows에서 완전한 Ubuntu 터미널 환경의 기능을 활용하세요.
+
+Windows에서 벗어나지 않고도 웹 애플리케이션 개발을 간소화하고, 최첨단 AI/ML 툴을 활용하고, 크로스 플랫폼 애플리케이션을 개발하고, IT 인프라를 관리하세요.
+</HeroPhotoOnRight>
+
+<HeroPhotoOnLeft
+  title="클라우드"
+  mainButtonLabel={"퍼블릭 클라우드에서 이용하기"} mainButtonHref={"https://ubuntu.com/download/cloud"}
+  subButtonLabel={"클라우드용 이미지 내려받기"} subButtonHref={"https://cloud-images.ubuntu.com/"}
+  imageSrc={UbuntuCloudImage.src}>
+AWS(Amazon Web Services), Microsoft Azure, Google Cloud, IBM Cloud, Oracle Cloud 등 
+다양한 퍼블릭 클라우드에서, 각 클라우드 환경에 최적화된 우분투 서버 이미지를 만나보실 수 있습니다.
+
+또한 Openstack, LXD 컨테이너/VM등 프라이빗 클라우드 환경에서 이용 가능한 우분투 이미지도 이용하실 수 있습니다. 
+</HeroPhotoOnLeft>
+
+<HeroPhotoOnRight
+  title="임베디드 및 Ubuntu Core"
+  mainButtonLabel={"Ubuntu Core 내려받기"} mainButtonHref={"https://ubuntu.com/download/core"}
+  imageSrc={UbuntuCoreImage.src}>
+Raspberry Pi, Intel IoT Platform, RISC-V 디바이스 등 다양한 임베디드 혹은 SBC(Single Board Computer) 디바이스에서 데스크톱 혹은 서버 버전 우분투를 이용하실 수 있습니다.
+임베디드 환경에 특화된 버전인 Ubuntu Core 또한 다양한 임베디드 혹은 SBC 디바이스에서 이용하실 수 있습니다.
+
+- [Raspberry Pi용 우분투](https://ubuntu.com/download/raspberry-pi)
+- [Intel IoT 플랫폼용 우분투](https://ubuntu.com/download/iot/intel-iot)
+- [RISC-V 디바이스용 우분투](https://ubuntu.com/download/risc-v)
+</HeroPhotoOnRight>
+
+<HeroPhotoOnLeft
+  title="OCI 컨테이너"
+  mainButtonLabel={"베이스 이미지 이용하기"} mainButtonHref={"https://hub.docker.com/_/ubuntu"}
+  subButtonLabel={"우분투 앱 컨테이너 이미지"} subButtonHref={"https://hub.docker.com/u/ubuntu"}
+  imageSrc={UbuntuContainerImage.src}>
+컨테이너 기반으로 애플리케이션을 배포 하신다면, 익숙한 개발 환경을 그대로 옮길 수 있는 우분투 OCI 컨테이너 이미지로 컨테이너 이미지를 빌드하여 배포 해 보세요.
+우분투 기반으로 빌드된 PostgreSQL, Kafka, NGINX 등 애플리케이션 컨테이너 이미지도 바로 이용하실 수 있습니다.
+</HeroPhotoOnLeft>
+
 
 ## 국내 미러 서버에서 내려받기
 국내 미러 서버에서 데스크탑 또는 서버용 CD/DVD 이미지를 빠르게 내려받을 수 있습니다.
 
-[KAIST](http://ftp.kaist.ac.kr/ubuntu-cd/HEADER.html)
-[카카오 (Kakao Corp.)](https://mirror.kakao.com/ubuntu-releases/)
-[LANET](https://ftp.lanet.kr/ubuntu-releases/)
-[AniGil Linux Archive](https://mirror.anigil.com/ubuntu-cd/HEADER.html)
-[Yuki Network Mirror](https://mirror.yuki.net.uk/ubuntu-releases/)
-[DevPG](https://devpg.net/ubuntu_cd/HEADER.html)
+- [KAIST](http://ftp.kaist.ac.kr/ubuntu-cd/HEADER.html)
+- [카카오 (Kakao Corp.)](https://mirror.kakao.com/ubuntu-releases/)
+- [LANET](https://ftp.lanet.kr/ubuntu-releases/)
+- [Yuki Network Mirror](https://mirror.yuki.net.uk/ubuntu-releases/)
+- [다음 커뮤니케이션](https://mirror.kakao.com/ubuntu-releases/)
 
-[Launchpad.net 에서 모든 우분투 공식 미러 목록 보기](https://launchpad.net/ubuntu/+archivemirrors)
-
-# 설치 및 사용하기
-
-## 데스크탑 및 서버
-- 데스크탑: [설치 가이드](http://wiki.ubuntu-kr.org/index.php/Getting_Started), [설치 튜토리얼(영어)](https://ubuntu.com/tutorials/install-ubuntu-desktop)
-- 서버: [설치 튜토리얼(영어)](https://ubuntu.com/tutorials/install-ubuntu-server)
-- [우분투 인증 하드웨어 목록](https://ubuntu.com/certified)
-## 퍼블릭 클라우드에서 사용하기
-- [퍼블릭 클라우드용 이미지](http://cloud-images.ubuntu.com/)
-- Amazon Web Services: [마켓플레이스](https://aws.amazon.com/marketplace/seller-profile?id=565feec9-3d43-413e-9760-c651546613f2), [문서](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/EC2_GetStarted.html)
-- Microsoft Azure: [Ubuntu on Azure](https://azure.microsoft.com/ko-kr/ubuntu/#overview), [문서](https://docs.microsoft.com/ko-kr/azure/virtual-machines/linux/quick-create-portal)
-- Google Cloud Platform: [마켓플레이스](https://console.cloud.google.com/marketplace/product/ubuntu-os-cloud/ubuntu-focal), [문서](https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu)
-
-## WSL (Windows Subsystem for Linux)
-최신 버전의 Windows 10 또는 Windows 11 을 사용 중이라면, WSL 환경으로 우분투를 편리하게 만나보실 수 있습니다.
-
-[WSL 환경에 우분투 설치 (WSL Korea User Group 문서)](https://wslhub.com/wsl-firststep/firststep/install/)
-
-## 리눅스 컨테이너(Linux Container)
-
-애플리케이션 컨테이너 이미지: Docker, Podman, Kubernetes 등 OCI 규격 컨테이너 이미지 빌드에 사용합니다.
-
-[Docker Hub](https://hub.docker.com/_/ubuntu)
-[Amazon ECR Public Gallery](https://gallery.ecr.aws/ubuntu/ubuntu)
-
-시스템 컨테이너 (VM 스타일 컨테이너) 이미지: LXD, LXC 에서 사용하며, 단순히 VM을 대체하는 용도의 컨테이너용으로 쓰이는 이미지 입니다.
-
-[LXD, LXC용 컨테이너 이미지 모두 보기](https://uk.lxd.images.canonical.com/)
-[linuxcontainers.org](https://linuxcontainers.org/)
+### Launchapd 에서 모든 미러 서버 목록 확인하기
+- [패키지 미러 서버 목록](https://launchpad.net/ubuntu/+archivemirrors)
+- [CD 이미지 미러 서버 목록](https://launchpad.net/ubuntu/+cdmirrors)
 
 # 도움 받기
 사용 중 도움이 필요하시면, 포럼과 채팅 등 다양한 온라인 커뮤니티에서 도움을 받으실 수 있습니다.
 
-[포럼](https://discourse.ubuntu-kr.org/)
-[메일링 리스트](https://lists.ubuntu.com/archives/ubuntu-ko/)
-[채팅 (Slack, IRC)](../chat)
-
-[Ask Ubuntu (영어)](https://askubuntu.com/)
-[Ubuntu Forums (영어)](https://ubuntuforums.org/)
-[Launchpad Answers (영어)](https://answers.launchpad.net/ubuntu)
+- [포럼](https://discourse.ubuntu-kr.org/)
+- [메일링 리스트](https://lists.ubuntu.com/archives/ubuntu-ko/)
+- [채팅 (Slack, IRC)](../chat)
+- [Ask Ubuntu (영어)](https://askubuntu.com/)
+- [Ubuntu Forums (영어)](https://ubuntuforums.org/)
+- [Launchpad Answers (영어)](https://answers.launchpad.net/ubuntu)
 
 # 상용 기술 지원
 
 > **참고사항**
 > 우분투 한국 커뮤니티는 Canonical Ltd.와는 독립적으로 운영되는 사용자 및 개발자 커뮤니티이며 비영리 형태로 운영되고 있습니다. 우분투에 상용 기술 지원을 제공하지 않으며, 관련 문의 답변도 불가능 합니다. 필요하신 경우, 아래 정보를 참고하셔서 Canonical Ltd. 또는 국내/해외 Canonical Partner로부터 상용 기술 지원을 제공 받으시기 바랍니다.
 
-## Ubuntu Pro (기존 Ubuntu Advantage)
+## Ubuntu Pro
 우분투를 개발한 Canonical Ltd. 로 부터 Ubuntu Pro 상용 기술 지원을 받으실 수 있습니다.  
 무료 요금제, Infra-only 요금제, 완전(Full) 지원 요금제가 있으며, 데스크탑, 서버, VM, 응용 프로그램(MySQL, MongoDB, NGINX, Kafka 등) 에 대한 기술 지원이 제공됩니다.
 
@@ -105,9 +193,9 @@ description: "최신 버전의 우분투를 내려받아 다양한 환경에 설
 ## 퍼블릭 클라우드용 Ubuntu Pro
 AWS, Google Cloud, Microsoft Azure 사용시, Canonical Ltd. 에서 제공하는 Ubuntu Pro 유료 프리미엄 이미지로 VM 워크로드를 생성할 수 있으며, 별도 추가 계약 없이 상용 기술 지원을 받을 수 있습니다. 
 
-[Ubuntu Pro for AWS (영어)](https://ubuntu.com/aws/pro)
-[Ubuntu Pro for Azure (영어)](https://ubuntu.com/azure/pro)
-[Ubuntu Pro for Google Cloud (영어)](https://ubuntu.com/gcp/pro)
+- [Ubuntu Pro for AWS (영어)](https://ubuntu.com/aws/pro)
+- [Ubuntu Pro for Azure (영어)](https://ubuntu.com/azure/pro)
+- [Ubuntu Pro for Google Cloud (영어)](https://ubuntu.com/gcp/pro)
 
 ## Canonical Partner
 Canonical Ltd.의 파트너사에서도 상용 기술 지원을 제공합니다.

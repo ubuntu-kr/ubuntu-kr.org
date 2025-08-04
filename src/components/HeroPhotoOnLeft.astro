@@ -1,0 +1,59 @@
+---
+const {
+    title,
+    subtitle,
+    mainButtonLabel,
+    mainButtonHref,
+    subButtonLabel,
+    subButtonHref,
+    imageSrc,
+} = Astro.props;
+---
+
+<section class="p-section--hero">
+    <div class="row--50-50-on-large">
+        <hr class="p-rule" />
+        <div class="col">
+            <div class="p-image-container--3-2 u-hide--small is-highlighted">
+                <img
+                    class="p-image-container__image"
+                    src={imageSrc}
+                    alt={title}
+                />
+            </div>
+        </div>
+        <div class="col">
+            <div class="p-section--shallow">
+                <h1>
+                    {title}
+                </h1>
+                <p class="p-heading--2">
+                    {subtitle}
+                </p>
+            </div>
+            <div class="p-section--shallow">
+                <slot />
+            </div>
+            {
+                mainButtonLabel || subButtonLabel ? (
+                    <div class="p-cta-block">
+                        {mainButtonLabel ? (
+                            <a href={mainButtonHref} class="p-button--positive">
+                                {mainButtonLabel}
+                            </a>
+                        ) : (
+                            <div />
+                        )}
+                        {subButtonLabel ? (
+                            <a href={subButtonHref}>{subButtonLabel} ›</a>
+                        ) : (
+                            <div />
+                        )}
+                    </div>
+                ) : (
+                    <div />
+                )
+            }
+        </div>
+    </div>
+</section>
