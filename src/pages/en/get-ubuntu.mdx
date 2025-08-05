@@ -1,0 +1,202 @@
+---
+layout: /src/layouts/MarkdownLayout.astro   
+title: "우분투 내려받기"
+description: "최신 버전의 우분투를 내려받아 다양한 환경에 설치하여 사용할 수 있습니다."
+---
+
+import HeroPhotoOnLeft from "@/components/HeroPhotoOnLeft.astro";
+import HeroPhotoOnRight from "@/components/HeroPhotoOnRight.astro";
+import UbuntuDesktopImage from "@/assets/showcases/desktop.png";
+import UbuntuServerImage from "@/assets/showcases/server.webp";
+import UbuntuWslImage from "@/assets/showcases/wsl.webp";
+import UbuntuCloudImage from "@/assets/showcases/cloud.png";
+import UbuntuCoreImage from "@/assets/showcases/embedded.webp";
+import UbuntuContainerImage from "@/assets/showcases/container.webp";
+
+<div class="p-section">
+  <div class="p-section--shallow">
+    <div class="grid-row">
+      <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+        <h2>Select a version</h2>
+      </div>
+      <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+        <p>
+          Choose the release that best fits your use case between Long Term Support (LTS) releases and Interim Releases.
+          You can check the Ubuntu release and support schedule at the <a href="https://ubuntu.com/about/release-cycle">Ubuntu release cycle (English)</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-pricing-block--50-50">
+    <div class="p-pricing-block__tier">
+      <div class="p-pricing-block__section">
+        <div class="p-section--shallow">
+          <h3 class="p-heading--4">
+            Long Term Support Releases
+            <br/>
+            <span class="u-text--muted">Ubuntu 24.04 LTS</span>
+          </h3>
+        </div>
+      </div>
+      <div class="p-pricing-block__section">
+        <p>Provides updates for 5 years by default, up to 12 years, suitable for environments requiring stable operation.</p>
+      </div>
+      <div class="p-pricing-block__section">
+        <p class="u-text--muted">Key features</p>
+        <hr class="p-rule--muted u-no-margin--bottom"/>
+        <ul class="p-list--divided">
+          <li class="p-list__item is-ticked">5 years of free updates, up to 12 years with paid support</li>
+          <li class="p-list__item is-ticked">Released every two years in April of even-numbered years</li>
+          <li class="p-list__item is-ticked">Linux kernel 6.8</li>
+          <li class="p-list__item is-ticked">Release focused on stability</li>
+        </ul>
+      </div>
+      <div class="p-pricing-block__section"><a href="https://discourse.ubuntu.com/t/noble-numbat-release-notes/39890">Check release notes</a></div>
+    </div>
+
+    <div class="p-pricing-block__tier">
+      <div class="p-pricing-block__section">
+        <div class="p-section--shallow">
+          <h3 class="p-heading--4">
+            Interim Releases
+            <br/>
+            <span class="u-text--muted">Ubuntu 25.04</span>
+          </h3>
+        </div>
+      </div>
+      
+      <div class="p-pricing-block__section">
+        <p>Provides updates for 9 months, allowing you to try new features early.</p>
+      </div>
+      <div class="p-pricing-block__section">
+        <p class="u-text--muted">Key features</p>
+        <hr class="p-rule--muted u-no-margin--bottom"/>
+        <ul class="p-list--divided">
+          <li class="p-list__item is-ticked">9 months of updates</li>
+          <li class="p-list__item is-ticked">Released every 6 months</li>
+          <li class="p-list__item is-ticked">Linux kernel 6.11</li>
+          <li class="p-list__item is-ticked">Release focused on new features</li>
+        </ul>
+      </div>
+      <div class="p-pricing-block__section"><a href="https://discourse.ubuntu.com/t/oracular-oriole-release-notes/44878">Check release notes</a></div>
+    </div>
+    </div>
+</div>
+
+<HeroPhotoOnRight
+  title="Ubuntu Desktop"
+  mainButtonLabel={"Download"} mainButtonHref={"https://ubuntu.com/download/desktop"}
+  subButtonLabel={"Download (kr.archive.ubuntu.com)"} subButtonHref={"https://kr.archive.ubuntu.com/ubuntu-cd/HEADER.html"}
+  imageSrc={UbuntuDesktopImage.src}>
+Ubuntu Desktop is used on millions of PCs and laptops worldwide, providing an easy-to-use GNOME-based open source Linux desktop environment.  
+Popular applications such as Firefox, Chrome, Discord, Steam, and OBS Studio are also available.
+
+**System requirements**
+ - Minimum 2GHz dual-core processor and 4GB system memory
+ - At least 25GB of free storage space
+ - Internet connection is recommended
+ - Installation media: DVD drive, USB disk, etc.
+</HeroPhotoOnRight>
+
+<HeroPhotoOnLeft
+  title="Ubuntu Server"
+  mainButtonLabel={"Download"} mainButtonHref={"https://ubuntu.com/download/server"}
+  subButtonLabel={"Download (for ARM servers)"} subButtonHref={"https://ubuntu.com/download/server/arm"}
+  imageSrc={UbuntuServerImage.src}>
+Ubuntu Server provides economical and scalable solutions for data centers, public or private clouds.  
+Whether building OpenStack clouds, Kubernetes clusters, or render farms with 50,000 nodes, Ubuntu Server offers the best value and scalability.
+
+**System requirements**
+ - Minimum 1GHz processor and 1GB system memory
+ - At least 5GB of free storage space
+ - Installation media: DVD drive, USB disk, etc.
+</HeroPhotoOnLeft>
+
+<HeroPhotoOnRight
+  title="WSL (Windows Subsystem for Linux)"
+  mainButtonLabel={"Download"} mainButtonHref={"https://ubuntu.com/desktop/wsl"}
+  subButtonLabel={"Download (kr.archive.ubuntu.com)"} subButtonHref={"https://kr.archive.ubuntu.com/ubuntu-cd/HEADER.html"}
+  imageSrc={UbuntuWslImage.src}>
+Use WSL (Windows Subsystem for Linux) to enjoy a full Ubuntu terminal environment on Windows.
+
+Simplify web application development, leverage cutting-edge AI/ML tools, develop cross-platform applications, and manage IT infrastructure without leaving Windows.
+</HeroPhotoOnRight>
+
+<HeroPhotoOnLeft
+  title="Cloud"
+  mainButtonLabel={"Use on public cloud"} mainButtonHref={"https://ubuntu.com/download/cloud"}
+  subButtonLabel={"Download cloud images"} subButtonHref={"https://cloud-images.ubuntu.com/"}
+  imageSrc={UbuntuCloudImage.src}>
+You can find Ubuntu server images optimized for various public clouds such as AWS (Amazon Web Services), Microsoft Azure, Google Cloud, IBM Cloud, and Oracle Cloud.
+
+Ubuntu images are also available for private cloud environments such as OpenStack and LXD containers/VMs.
+</HeroPhotoOnLeft>
+
+<HeroPhotoOnRight
+  title="Embedded and Ubuntu Core"
+  mainButtonLabel={"Download Ubuntu Core"} mainButtonHref={"https://ubuntu.com/download/core"}
+  imageSrc={UbuntuCoreImage.src}>
+You can use Ubuntu desktop or server versions on various embedded or SBC (Single Board Computer) devices such as Raspberry Pi, Intel IoT Platform, and RISC-V devices.  
+Ubuntu Core, a version specialized for embedded environments, is also available on various embedded or SBC devices.
+
+- [Ubuntu for Raspberry Pi](https://ubuntu.com/download/raspberry-pi)
+- [Ubuntu for Intel IoT Platform](https://ubuntu.com/download/iot/intel-iot)
+- [Ubuntu for RISC-V devices](https://ubuntu.com/download/risc-v)
+</HeroPhotoOnRight>
+
+<HeroPhotoOnLeft
+  title="OCI Containers"
+  mainButtonLabel={"Use base images"} mainButtonHref={"https://hub.docker.com/_/ubuntu"}
+  subButtonLabel={"Ubuntu app container images"} subButtonHref={"https://hub.docker.com/u/ubuntu"}
+  imageSrc={UbuntuContainerImage.src}>
+If you deploy applications based on containers, build and deploy container images using Ubuntu OCI container images that allow you to move your familiar development environment as is.  
+You can also use application container images built on Ubuntu such as PostgreSQL, Kafka, and NGINX right away.
+</HeroPhotoOnLeft>
+
+
+## Download from domestic mirror servers
+You can quickly download desktop or server CD/DVD images from domestic mirror servers.
+
+- [KAIST](http://ftp.kaist.ac.kr/ubuntu-cd/HEADER.html)
+- [Kakao Corp.](https://mirror.kakao.com/ubuntu-releases/)
+- [LANET](https://ftp.lanet.kr/ubuntu-releases/)
+- [Yuki Network Mirror](https://mirror.yuki.net.uk/ubuntu-releases/)
+- [Daum Communications](https://mirror.kakao.com/ubuntu-releases/)
+
+### Check all mirror servers on Launchpad
+- [Package mirror server list](https://launchpad.net/ubuntu/+archivemirrors)
+- [CD image mirror server list](https://launchpad.net/ubuntu/+cdmirrors)
+
+# Get help
+If you need help, you can get support from various online communities such as forums and chats.
+
+- [Forum](https://discourse.ubuntu-kr.org/)
+- [Mailing list](https://lists.ubuntu.com/archives/ubuntu-ko/)
+- [Chat (Slack, IRC)](../chat)
+- [Ask Ubuntu (English)](https://askubuntu.com/)
+- [Ubuntu Forums (English)](https://ubuntuforums.org/)
+- [Launchpad Answers (English)](https://answers.launchpad.net/ubuntu)
+
+# Commercial support
+
+> **Note**
+> The Ubuntu Korean community is an independent user and developer community operated as a non-profit organization, separate from Canonical Ltd. It does not provide commercial support for Ubuntu, nor can it respond to related inquiries. If needed, please refer to the information below to receive commercial support from Canonical Ltd. or Canonical Partners in Korea or abroad.
+
+## Ubuntu Pro
+You can receive commercial support from Canonical Ltd., the developer of Ubuntu, through Ubuntu Pro.  
+There are free, Infra-only, and full support plans available, providing technical support for desktop, server, VM, and applications (MySQL, MongoDB, NGINX, Kafka, etc.).
+
+[Ubuntu Pro (English)](https://ubuntu.com/pro)
+
+## Ubuntu Pro for public cloud
+When using AWS, Google Cloud, or Microsoft Azure, you can create VM workloads with Canonical Ltd.'s paid premium Ubuntu Pro images and receive commercial support without additional contracts.
+
+- [Ubuntu Pro for AWS (English)](https://ubuntu.com/aws/pro)
+- [Ubuntu Pro for Azure (English)](https://ubuntu.com/azure/pro)
+- [Ubuntu Pro for Google Cloud (English)](https://ubuntu.com/gcp/pro)
+
+## Canonical Partner
+Commercial support is also provided by Canonical Ltd.'s partners.
+
+[Find a Canonical partner (English)](https://canonical.com/partners/find-a-partner)
