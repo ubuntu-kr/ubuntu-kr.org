@@ -1,0 +1,66 @@
+---
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+const { lang } = Astro.props;
+const config = WebsiteConfig(lang as keyof typeof languages);
+
+import PageLayout from "@/layouts/PageLayout.astro";
+import EventsBanner from "@/components/EventsBanner.astro";
+import HeroPhotoOnLeft from "@/components/HeroPhotoOnLeft.astro";
+import HeroPhotoOnRight from "@/components/HeroPhotoOnRight.astro";
+import UbuntuCloudImage from "@/assets/showcases/cloud.png";
+import UbuntuCoreImage from "@/assets/showcases/embedded.webp";
+
+---
+
+<PageLayout title={config.metadata.title} description={config.metadata.description}>
+    <section class="p-section--hero p-strip is-dark">
+        <div class="row--50-50-on-large">
+            <div class="col">
+                <h1 class="u-no-margin--bottom">
+                    행사/모임 참여하기
+                </h1>
+            </div>
+            <div class="col">
+                <div class="p-section--shallow">
+                    <p>
+                        커뮤니티에서 열리는 우분투 관련 다양한 행사와 모임에 참여 해 보세요.
+                        정기총회, 세미나/밋업, 워크샵 부터, 매년 크게 열리는 컨퍼런스인 UbuCon Korea 까지
+                        다양한 행사와 모임에 참여하여 우분투 커뮤니티의 다른 사람들과 교류 해 보세요.
+                    </p>
+                </div>
+            </div>
+            <div class="p-image-container--cinematic is-cover">
+                <img
+                    class="p-image-container__image"
+                    src={config.eventsPage.heroImageSrc}
+                    alt=""
+                />
+            </div>
+        </div>
+    </section>
+    <section class="p-section p-strip is-dark">
+        <EventsBanner />
+    <HeroPhotoOnLeft
+      title="정기총회"
+      mainButtonLabel={"회의록 열람하기"} mainButtonHref={"https://disclosures.ubuntu-kr.org/meetings/"}
+      imageSrc={UbuntuCloudImage.src}>
+    우리 커뮤니티는 2021년 12월부터 정관에 따라서 운영되고 있고, 이에 따라 매년 3월 말 정기총회를 개최하고 있습니다.
+    정기총회에서는 지난해 활동과 회계결산 보고 및 승인과, 올해 활동계획과 예산안 승인 등의 의결이 진행됩니다.<br/><br/>
+    의결권을 가지고 있는 운영진 분들이 주로 참여 하시지만, 커뮤니티 구성원이고 커뮤니티 운영 현황에 관심이 있는 분 또한 방청 형태로 참석이 가능합니다.
+    보통 정기 총회는 세미나/밋업/워크샵 등과 함께 연계하여 하나의 행사로도 개최되고 있습니다.
+    </HeroPhotoOnLeft>
+
+    <HeroPhotoOnRight
+      title="UbuCon Korea"
+      mainButtonLabel={"UbuCon Korea 2025"} mainButtonHref={"https://2025.ubuntu-kr.org"}
+      imageSrc={UbuntuCoreImage.src}>
+    우부콘 코리아(UbuCon Korea)는 우분투와 오픈소스라는 공통점 하나로 매년 다양한 배경을 가진 사람들이 모여 우분투와 오픈소스로 무엇을 할 수 있고,
+    또 어떻게 우분투 프로젝트와 커뮤니티에 기여할 수 있는지 함께 모색하는 우분투한국커뮤니티의 연례 행사 입니다.<br/><br/>
+    2023년 부터 매년 개최되고 있습니다.<br/>
+    <a href="https://2023.ubuntu-kr.org">2023, </a>
+    <a href="https://2024.ubuntu-kr.org">2024, </a>
+    <a href="https://2025.ubuntu-kr.org">2025, </a>
+    </HeroPhotoOnRight>
+    </section>
+</PageLayout>

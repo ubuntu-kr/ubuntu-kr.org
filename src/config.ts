@@ -1,5 +1,6 @@
 import UkcLogo from "@/assets/UbuntuKrCircle.svg";
 import Uck24Photo from "@/assets/uck24_group_photo.jpg";
+import Uck25People from "@/assets/uck25_people.jpg";
 import type { ui } from "@/i18n/ui";
 import { useTranslations, useTranslatedPath } from "@/i18n/utils";
 import { languages, defaultLang, showDefaultLang } from "@/i18n/ui";
@@ -27,6 +28,9 @@ export const WebsiteConfig = (lang: keyof typeof ui = defaultLang) => {
     },
     mainPage: {
       heroImageSrc: Uck24Photo.src,
+    },
+    eventsPage: {
+      heroImageSrc: Uck25People.src,
     },
     feeds: {
       blogFeedUrl: "https://blog.ubuntu-kr.org/index.xml",
