@@ -20,7 +20,10 @@ import Sponsors from "@/components/Sponsors.astro";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<PageLayout title={config.metadata.title} description={config.metadata.description}>
+<PageLayout
+    title={config.metadata.title}
+    description={config.metadata.description}
+>
     <section class="p-section--hero p-strip is-dark">
         <div class="row--50-50-on-large">
             <div class="col">
@@ -62,7 +65,9 @@ import Sponsors from "@/components/Sponsors.astro";
                         배포판(Distribution)입니다.
                     </p>
                     <p>여러분이 원하는 환경에서 오늘 우분투를 만나보세요!</p>
-                    <a href="./ubuntu/get-ubuntu"><button>우분투 내려받기</button></a>
+                    <a href="./ubuntu/get-ubuntu"
+                        ><button>우분투 내려받기</button></a
+                    >
                 </div>
                 <div class="grid-col-4 grid-col-medium-4">
                     <div class="grid-row">
@@ -209,9 +214,13 @@ import Sponsors from "@/components/Sponsors.astro";
                             <li class="p-inline-list__item">
                                 <a href={config.links.forum}>포럼(Discourse)</a>
                             </li>
-                            <li class="p-inline-list__item"><a href="chat">채팅(Matrix, Discord)</a></li>
                             <li class="p-inline-list__item">
-                                <a href={config.links.mailinglist}>메일링 리스트</a>
+                                <a href="chat">채팅(Matrix, Discord)</a>
+                            </li>
+                            <li class="p-inline-list__item">
+                                <a href={config.links.mailinglist}
+                                    >메일링 리스트</a
+                                >
                             </li>
                         </ul>
                     </div>
@@ -227,11 +236,15 @@ import Sponsors from "@/components/Sponsors.astro";
                     </div>
 
                     <div class="grid-col-4">
-                         <ul class="p-inline-list--middot">
+                        <ul class="p-inline-list--middot">
                             <li class="p-inline-list__item">
-                                세미나, 컨퍼런스, 워크샵 등 행사 참여하기
+                                <a href="events"
+                                    >세미나, 컨퍼런스, 워크샵 등 행사 참여하기</a
+                                >
                             </li>
-                            <li class="p-inline-list__item">프로젝트, 그룹 스터디, 멘토링 등 모임 참여하기</li>
+                            <li class="p-inline-list__item">
+                                프로젝트, 그룹 스터디, 멘토링 등 모임 참여하기
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -246,9 +259,7 @@ import Sponsors from "@/components/Sponsors.astro";
                     </div>
 
                     <div class="grid-col-4">
-                        <p>
-                            우분투/커뮤니티 관련 참고자료 찾아보기
-                        </p>
+                        <p>우분투/커뮤니티 관련 참고자료 찾아보기</p>
                     </div>
                 </div>
                 <div class="grid-row">
@@ -266,7 +277,9 @@ import Sponsors from "@/components/Sponsors.astro";
                             <li class="p-inline-list__item">
                                 개발, 번역, QA, 문서화 등으로 기여하기
                             </li>
-                            <li class="p-inline-list__item">재정적으로 기여하기</li>
+                            <li class="p-inline-list__item">
+                                재정적으로 기여하기
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -275,21 +288,52 @@ import Sponsors from "@/components/Sponsors.astro";
                         <hr class="is-muted" />
                     </div>
                 </div>
-               <div class="grid-row">
+                <div class="grid-row">
                     <div class="grid-col-2 grid-col-start-large-3">
                         <h3 class="p-heading--5">소셜미디어 팔로우 하기</h3>
                     </div>
 
                     <div class="grid-col-4">
                         <ul class="p-inline-list--middot">
-                            <li class="p-inline-list__item"><a href={`https://launchpad.net/~${config.socialMedia.launchpad}`}>Launchpad</a></li>
-                            <li class="p-inline-list__item"><a href={`https://fb.com/${config.socialMedia.facebook}`}>Facebook</a></li>
-                            <li class="p-inline-list__item"><a href={`https://instagram.com/${config.socialMedia.instagram}`}>Instagram</a></li>
-                            <li class="p-inline-list__item"><a href={`https://www.linkedin.com/company/${config.socialMedia.linkedin}`}>LinkedIn</a></li>
-                            <li class="p-inline-list__item"><a href={`https://x.com/${config.socialMedia.x}`}>X</a> </li>
-                            <li class="p-inline-list__item"><a href={`${config.socialMedia.mastodon}`}>Mastodon</a></li>
-                            <li class="p-inline-list__item"><a href={`${config.socialMedia.bluesky}`}>BlueSky</a></li>
-                            <li class="p-inline-list__item"><a href={`https://www.youtube.com/user/${config.socialMedia.youtube}`}>YouTube</a></li>
+                            <li class="p-inline-list__item">
+                                <a
+                                    href={`https://launchpad.net/~${config.socialMedia.launchpad}`}
+                                    >Launchpad</a>
+                            </li>
+                            <li class="p-inline-list__item">
+                                <a
+                                    href={`https://fb.com/${config.socialMedia.facebook}`}
+                                    >Facebook</a>
+                            </li>
+                            <li class="p-inline-list__item">
+                                <a
+                                    href={`https://instagram.com/${config.socialMedia.instagram}`}
+                                    >Instagram</a>
+                            </li>
+                            <li class="p-inline-list__item">
+                                <a
+                                    href={`https://www.linkedin.com/company/${config.socialMedia.linkedin}`}
+                                    >LinkedIn</a>
+                            </li>
+                            <li class="p-inline-list__item">
+                                <a
+                                    href={`https://x.com/${config.socialMedia.x}`}
+                                    >X</a
+                                >
+                            </li>
+                            <li class="p-inline-list__item">
+                                <a href={`${config.socialMedia.mastodon}`}
+                                    >Mastodon</a>
+                            </li>
+                            <li class="p-inline-list__item">
+                                <a href={`${config.socialMedia.bluesky}`}
+                                    >BlueSky</a>
+                            </li>
+                            <li class="p-inline-list__item">
+                                <a
+                                    href={`https://www.youtube.com/user/${config.socialMedia.youtube}`}
+                                    >YouTube</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -298,9 +342,10 @@ import Sponsors from "@/components/Sponsors.astro";
                         <hr class="is-muted" />
                     </div>
                 </div>
+            </div>
         </div>
-    </section>
-    <section class="p-section p-strip is-dark">
-        <Sponsors/>
+        <section class="p-section p-strip is-dark">
+            <Sponsors />
+        </section>
     </section>
 </PageLayout>
