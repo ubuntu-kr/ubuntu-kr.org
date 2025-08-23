@@ -7,6 +7,7 @@ export default {
     "nav.getUbuntu": "우분투 내려받기",
     "nav.chat": "채팅",
     "nav.events": "행사",
+    "nav.docs": "문서",
     "home.feeds.title": "커뮤니티 최근 게시물 ",
     "home.feeds.forum": "포럼",
     "home.feeds.notice": "공지사항",

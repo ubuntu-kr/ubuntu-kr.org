@@ -1,0 +1,238 @@
+---
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+const { lang } = Astro.props;
+const config = WebsiteConfig(lang as keyof typeof languages);
+
+import PageLayout from "@/layouts/PageLayout.astro";
+import EventsBanner from "@/components/EventsBanner.astro";
+import HeroPhotoOnLeft from "@/components/HeroPhotoOnLeft.astro";
+import HeroPhotoOnRight from "@/components/HeroPhotoOnRight.astro";
+import GeneralMeetingImage from "@/assets/events/ga.jpg";
+import UbuConKoreaImage from "@/assets/events/ubucon.jpg";
+import MeetupsImage from "@/assets/events/meetups.jpg";
+import WorkshopImage from "@/assets/events/workshop.jpg";
+import GlobalJamsIMage from "@/assets/events/globaljams.jpg";
+---
+
+<PageLayout
+    title={config.metadata.title}
+    description={config.metadata.description}
+>
+    <div class="p-section--hero p-strip is-dark">
+        <hr class="p-rule is-fixed-width" />
+
+        <div class="grid-row">
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <h2>포럼</h2>
+            </div>
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <div class="p-section--shallow">
+                    <p>
+                        포럼에서 다른 사람이 올린 질문을 찾아보거나, 어려움이
+                        있는 부분에 대한 질문을 올려 커뮤니티의 도움을
+                        받아보세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="p-pricing-block">
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Ubuntu Discourse
+                            <br />
+
+                            <span class="u-text--muted"
+                                >discourse.ubuntu.com</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://discourse.ubuntu.com/"
+                        ><button>방문하기</button></a
+                    >
+                    <a
+                        href="https://discourse.ubuntu.com/t/welcome-to-support-and-help/49951"
+                        ><button>질문하기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            우분투한국커뮤니티 포럼
+                            <br />
+
+                            <span class="u-text--muted"
+                                >discourse.ubuntu-kr.org</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://discourse.ubuntu-kr.org/"
+                        ><button>방문하기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Ask Ubuntu
+                            <br />
+
+                            <span class="u-text--muted">askubuntu.com</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://askubuntu.com/"
+                        ><button>질문하기</button></a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-section--hero p-strip is-dark">
+        <hr class="p-rule is-fixed-width" />
+
+        <div class="grid-row">
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <h2>문서</h2>
+            </div>
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <div class="p-section--shallow">
+                    <p>
+                        공식 문서 자료나 커뮤니티에서 관리하는 문서를 통해
+                        필요한 정보를 찾아보세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="p-pricing-block">
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            공식문서
+                            <br />
+
+                            <span class="u-text--muted">docs.ubuntu.com</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://docs.ubuntu.com/"
+                        ><button>방문하기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            우분투 커뮤니티 문서
+                            <br />
+
+                            <span class="u-text--muted"
+                                >ubuntu.com/community/docs</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://ubuntu.com/community/docs"
+                        ><button>방문하기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            튜토리얼
+                            <br />
+
+                            <span class="u-text--muted"
+                                >ubuntu.com/tutorials</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://ubuntu.com/tutorials"
+                        ><button>방문하기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            커뮤니티 위키(한국어)
+                            <br />
+
+                            <span class="u-text--muted"
+                                >old.wiki.ubuntu-kr.org</span
+                            >
+                            <span class="u-text--muted">wiki.ubuntu-kr.org</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://old.wiki-ubuntu-kr.org/"
+                        ><button>방문하기(Old)</button></a
+                    >
+                    <a href="https://wiki.ubuntu-kr.org/"
+                        ><button>방문하기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            커뮤니티 위키(영어)
+                            <br />
+
+                            <span class="u-text--muted">wiki.ubuntu.com</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://wiki.ubuntu.com"
+                        ><button>방문하기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            우분투 인증 하드웨어
+                            <br />
+
+                            <span class="u-text--muted"
+                                >ubuntu.com/certified</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://ubuntu.com/certified"
+                        ><button>방문하기</button></a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</PageLayout>

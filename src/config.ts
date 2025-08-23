@@ -55,11 +55,7 @@ export const WebsiteConfig = (lang: keyof typeof ui = defaultLang) => {
               label: t("nav.getUbuntu"),
               href: translatePath(`/ubuntu/get-ubuntu/`),
             },
-            // { label: t("nav.coc"), href: translatePath(`/coc/`) },
-            // {
-            //     label: t("nav.venueSafety"),
-            //     href: translatePath(`/venue-safety/`),
-            // },
+            { label: t("nav.docs"), href: translatePath(`/ubuntu/docs/`) },
           ],
         },
         {
@@ -68,12 +64,6 @@ export const WebsiteConfig = (lang: keyof typeof ui = defaultLang) => {
           items: [
             { label: t("nav.events"), href: translatePath(`/events/`) },
             { label: t("nav.chat"), href: translatePath(`/chat/`) },
-            // { label: t("nav.about"), href: translatePath(`/about/`) },
-            // { label: t("nav.coc"), href: translatePath(`/coc/`) },
-            // {
-            //     label: t("nav.venueSafety"),
-            //     href: translatePath(`/venue-safety/`),
-            // },
           ],
         },
       ],
