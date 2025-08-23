@@ -1,0 +1,183 @@
+---
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+const { lang } = Astro.props;
+const config = WebsiteConfig(lang as keyof typeof languages);
+
+import PageLayout from "@/layouts/PageLayout.astro";
+import EventsBanner from "@/components/EventsBanner.astro";
+import HeroPhotoOnLeft from "@/components/HeroPhotoOnLeft.astro";
+import HeroPhotoOnRight from "@/components/HeroPhotoOnRight.astro";
+import GeneralMeetingImage from "@/assets/events/ga.jpg";
+import UbuConKoreaImage from "@/assets/events/ubucon.jpg";
+import MeetupsImage from "@/assets/events/meetups.jpg";
+import WorkshopImage from "@/assets/events/workshop.jpg";
+import GlobalJamsIMage from "@/assets/events/globaljams.jpg";
+---
+
+<PageLayout
+    title={config.metadata.title}
+    description={config.metadata.description}
+>
+    <section class="p-section--hero p-strip is-dark">
+        <div class="row--50-50-on-large">
+            <div class="col">
+                <h1 class="u-no-margin--bottom">Join Events/Meet-ups</h1>
+            </div>
+            <div class="col">
+                <div class="p-section--shallow">
+                    <p>
+                        Join various Ubuntu-related events and meet-ups held by
+                        the community. From annual general meetings,
+                        seminars/meetups, workshops, to the large annual
+                        conference, UbuCon Korea, participate in diverse events
+                        and meet-ups to connect with other members of the Ubuntu
+                        community.
+                    </p>
+                </div>
+            </div>
+            <div class="p-image-container--cinematic is-cover">
+                <img
+                    class="p-image-container__image"
+                    src={config.eventsPage.heroImageSrc}
+                    alt=""
+                />
+            </div>
+        </div>
+    </section>
+    <section class="p-section p-strip is-dark">
+        <EventsBanner />
+        <HeroPhotoOnLeft
+            title="Annual General Meeting"
+            mainButtonLabel={"View Meeting Minutes"}
+            mainButtonHref={"https://disclosures.ubuntu-kr.org/meetings/"}
+            imageSrc={GeneralMeetingImage.src}
+        >
+            Our community has been operating under its articles of association
+            since December 2021, and accordingly, holds an annual general
+            meeting at the end of March each year. At the general meeting,
+            resolutions are made, such as reporting and approving last year's
+            activities and financial statements, and approving this year's
+            activity plan and budget.<br /><br />Although primarily attended by
+            organizers with voting rights, any community member interested in
+            the community's operational status can also attend as an observer.
+            The annual general meeting is often held in conjunction with
+            seminars/meetups/workshops as part of a single event.
+        </HeroPhotoOnLeft>
+
+        <HeroPhotoOnRight
+            title="UbuCon Korea"
+            mainButtonLabel={"UbuCon Korea 2025"}
+            mainButtonHref={"https://2025.ubuntu-kr.org"}
+            imageSrc={UbuConKoreaImage.src}
+        >
+            UbuCon Korea is an annual event of the Ubuntu Korea Community where
+            people from various backgrounds gather with the common interest of
+            Ubuntu and open source. They come together to explore what can be
+            done with Ubuntu and open source, and how to contribute to the
+            Ubuntu project and community.<br /><br />It has been held annually
+            since 2023.<br />
+
+            <a href="https://2022.ubucon.asia">2022(Asia) </a>
+            <a href="https://2023.ubuntu-kr.org">2023 </a>
+            <a href="https://2024.ubuntu-kr.org">2024 </a>
+            <a href="https://2025.ubuntu-kr.org">2025 </a>
+        </HeroPhotoOnRight>
+        <div class="row">
+            <hr class="p-rule" />
+            <div class="col-3 col-medium-6">
+                <h2 class="p-heading--1">Irregular Events/Meet-ups</h2>
+            </div>
+            <div class="col-9 col-medium-6">
+                <div class="p-equal-height-row">
+                    <div class="p-equal-height-row__col u-sv2">
+                        <div class="p-equal-height-row__item">
+                            <div
+                                class="p-image-container u-hide--small"
+                                style="overflow: hidden;"
+                            >
+                                <img
+                                    src={MeetupsImage.src}
+                                    sizes="(min-width: 566px) 566px, 100vw"
+                                    alt=""
+                                    width="566"
+                                    height="380"
+                                    loading="lazy"
+                                    class="p-image-container__image u-zoom-on-hover"
+                                />
+                            </div>
+                            <hr class="p-rule--highlight u-hide--medium" />
+                        </div>
+                        <h3 class="p-heading--5 p-equal-height-row__item">
+                            Seminars/Meetups
+                        </h3>
+                        <p class="p-equal-height-row__item">
+                            These are seminar-style gatherings related to Ubuntu
+                            and open source, typically covering lighter topics
+                            compared to conferences. They usually host around 30
+                            participants and are held irregularly.
+                        </p>
+                    </div>
+                    <div class="p-equal-height-row__col u-sv2">
+                        <div class="p-equal-height-row__item">
+                            <div
+                                class="p-image-container u-hide--small"
+                                style="overflow: hidden;"
+                            >
+                                <img
+                                    src={WorkshopImage.src}
+                                    sizes="(min-width: 566px) 566px, 100vw"
+                                    alt=""
+                                    width="566"
+                                    height="380"
+                                    loading="lazy"
+                                    class="p-image-container__image u-zoom-on-hover"
+                                />
+                            </div>
+                            <hr class="p-rule--highlight u-hide--medium" />
+                        </div>
+                        <h3 class="p-heading--5 p-equal-height-row__item">
+                            Workshops/Hands on Lab
+                        </h3>
+                        <p class="p-equal-height-row__item">
+                            We host various practical workshop events related to
+                            Ubuntu and open source, allowing participants to
+                            directly learn how to utilize them.
+                        </p>
+                    </div>
+                    <div class="p-equal-height-row__col u-sv2">
+                        <div class="p-equal-height-row__item">
+                            <div
+                                class="p-image-container u-hide--small"
+                                style="overflow: hidden;"
+                            >
+                                <img
+                                    src={GlobalJamsIMage.src}
+                                    sizes="(min-width: 566px) 566px, 100vw"
+                                    alt=""
+                                    width="566"
+                                    height="380"
+                                    loading="lazy"
+                                    class="p-image-container__image u-zoom-on-hover"
+                                />
+                            </div>
+                            <hr class="p-rule--highlight u-hide--medium" />
+                        </div>
+
+                        <h3 class="p-heading--5 p-equal-height-row__item">
+                            Global Jams
+                        </h3>
+                        <p class="p-equal-height-row__item">
+                            This is a gathering to contribute to the Ubuntu
+                            open-source project together. You can learn how to
+                            contribute to Ubuntu in various areas such as
+                            translation, bug reporting, documentation, and
+                            packaging, and actually participate in the
+                            contributions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</PageLayout>
