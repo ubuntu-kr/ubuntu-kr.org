@@ -6,6 +6,7 @@ export default {
     "nav.community": "Community",
     "nav.getUbuntu": "Get Ubuntu",
     "nav.chat": "Chat",
+    "nav.events": "Events",
     "home.feeds.title": "Latest from our community",
     "home.feeds.forum": "Forum",
     "home.feeds.notice": "Notice",
