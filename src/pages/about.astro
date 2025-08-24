@@ -1,0 +1,86 @@
+---
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+const { lang } = Astro.props;
+const config = WebsiteConfig(lang as keyof typeof languages);
+
+import PageLayout from "@/layouts/PageLayout.astro";
+import HeroPhotoOnLeft from "@/components/HeroPhotoOnLeft.astro";
+import HeroPhotoOnRight from "@/components/HeroPhotoOnRight.astro";
+import UbuntuKrTagLogo from "@/assets/UbuntuKrTitleShort.svg";
+import OnlinePlatforms from "@/assets/online_platforms.svg";
+import UbuConKoreaPhoto from "@/assets/uck25_people.jpg";
+---
+
+<PageLayout
+    title={config.metadata.title}
+    description={config.metadata.description}
+>
+    <section class="p-section--hero p-strip is-dark">
+        <div class="row--50-50-on-large">
+            <div class="col">
+                <h1 class="u-no-margin--bottom">커뮤니티 소개</h1>
+            </div>
+            <div class="col">
+                <div class="p-section--shallow">
+                    <p>
+                        Ubuntu와 오픈소스를 좋아하는 모두를 위한 곳, 그리고
+                        2005년부터 Ubuntu와 오픈소스 저변 확대에 많은 노력을
+                        기울이고 있는 우분투한국커뮤니티에 대해 더 자세히
+                        알아보세요!
+                    </p>
+                </div>
+            </div>
+            <div class="p-image-container--cinematic is-cover">
+                <img
+                    class="p-image-container__image"
+                    src={config.mainPage.heroImageSrc}
+                    alt=""
+                />
+            </div>
+        </div>
+    </section>
+    <section class="p-section--hero p-strip is-dark">
+        <HeroPhotoOnRight
+            title="우분투한국커뮤니티"
+            imageSrc={UbuntuKrTagLogo.src}
+        >
+            우분투한국커뮤니티(Ubuntu Korea Community)는 가장 널리 쓰이는 리눅스
+            배포판이자 오픈소스 프로젝트인 우분투(Ubuntu) 그리고 관련 오픈소스를
+            좋아하는 모두를 위한 커뮤니티 입니다.<br /><br /> Ubuntu LoCo Council
+            인증을 받은 공식 지역 커뮤니티이며, Ubuntu와 오픈소스를 공통점으로 다양한
+            사람들을 연결하고, 행사 개최와 Ubuntu 및 관련 오픈소스 기여 활동, 그리고
+            국내외 다양한 오픈소스 커뮤니티와 교류를 통해 Ubuntu와 오픈소스 저변
+            확대에 많은 노력을 기울이고 있습니다.
+        </HeroPhotoOnRight>
+        <HeroPhotoOnLeft
+            title="포럼 및 채팅"
+            imageSrc={OnlinePlatforms.src}
+            mainButtonLabel={"포럼 및 각종 자료 링크"}
+            mainButtonHref={"../ubuntu/docs"}
+            subButtonLabel={"채팅"}
+            subButtonHref={"../chat"}
+        >
+            커뮤니티에서 운영하는 포럼과 채팅 채널을 통해서 우분투 관련
+            질의응답을 하거나, 새로운 소식, 예정된 커뮤니티 행사 소식 등을
+            받아보실 수 있습니다.<br /><br />
+            포럼에서는 질의응답이나 자료 공유도 하실 수 있지만, 다른 회원이 올린
+            기존 질의응답 기록이나 자료도 잘 보존되어 있어 이를 통해 도움도 받을
+            수 있습니다.<br /><br />
+            Matrix, Discord 같은 채팅을 통해 다른 커뮤니티 회원과 빠르게 소통할 수도
+            있습니다.
+        </HeroPhotoOnLeft>
+        <HeroPhotoOnRight
+            title="다양한 오프라인 행사"
+            imageSrc={UbuConKoreaPhoto.src}
+            mainButtonLabel={"더 알아보기"}
+            mainButtonHref={"../events"}
+        >
+            우분투 관련 크고 작은 행사가 주기적으로 개최되고 있습니다. 매년
+            열리는 정기총회와 UbuCon Korea 부터, 직접 채험할 수 있는 실습
+            워크샵, 함께 우분투 프로젝트에 기여하는 모임인 Global Jams 등 다양한
+            행사가 있으며, 수도권 뿐만 아니라 부산과 포항 및 대전 등 다양한
+            지역에서 열리고 있습니다.
+        </HeroPhotoOnRight>
+    </section>
+</PageLayout>

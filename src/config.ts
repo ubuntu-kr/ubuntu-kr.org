@@ -62,6 +62,7 @@ export const WebsiteConfig = (lang: keyof typeof ui = defaultLang) => {
           label: t("nav.community"),
           href: translatePath(`/`),
           items: [
+            { label: t("nav.about"), href: translatePath(`/about/`) },
             { label: t("nav.events"), href: translatePath(`/events/`) },
             { label: t("nav.chat"), href: translatePath(`/chat/`) },
           ],

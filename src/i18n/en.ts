@@ -8,6 +8,7 @@ export default {
     "nav.chat": "Chat",
     "nav.events": "Events",
     "nav.docs": "Docs",
+    "nav.about": "About",
     "home.feeds.title": "Latest from our community",
     "home.feeds.forum": "Forum",
     "home.feeds.notice": "Notice",
