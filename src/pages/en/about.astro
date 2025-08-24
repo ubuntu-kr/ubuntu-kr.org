@@ -1,0 +1,120 @@
+---
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+const { lang } = Astro.props;
+const config = WebsiteConfig(lang as keyof typeof languages);
+
+import PageLayout from "@/layouts/PageLayout.astro";
+import HeroPhotoOnLeft from "@/components/HeroPhotoOnLeft.astro";
+import HeroPhotoOnRight from "@/components/HeroPhotoOnRight.astro";
+import UbuntuKrTagLogo from "@/assets/UbuntuKrTitleShort.svg";
+import OnlinePlatforms from "@/assets/online_platforms.svg";
+import UbuConKoreaPhoto from "@/assets/uck25_people.jpg";
+import GlobalJamsPhoto from "@/assets/events/globaljams.jpg";
+import Uck25CommunityBooth from "@/assets/uck25_community.jpg";
+---
+
+<PageLayout
+    title={config.metadata.title}
+    description={config.metadata.description}
+>
+    <section class="p-section--hero p-strip is-dark">
+        <div class="row--50-50-on-large">
+            <div class="col">
+                <h1 class="u-no-margin--bottom">About the Community</h1>
+            </div>
+            <div class="col">
+                <div class="p-section--shallow">
+                    <p>
+                        Discover more about the Ubuntu Korea Community, a place
+                        for everyone who loves Ubuntu and open source, and
+                        dedicated to expanding the reach of Ubuntu and open
+                        source since 2005!
+                    </p>
+                </div>
+            </div>
+            <div class="p-image-container--cinematic is-cover">
+                <img
+                    class="p-image-container__image"
+                    src={config.mainPage.heroImageSrc}
+                    alt=""
+                />
+            </div>
+        </div>
+    </section>
+    <section class="p-section--hero p-strip is-dark">
+        <HeroPhotoOnRight
+            title="Ubuntu Korea Community"
+            imageSrc={UbuntuKrTagLogo.src}
+        >
+            The Ubuntu Korea Community is a community for everyone who loves
+            Ubuntu, the most widely used Linux distribution and open-source
+            project, and related open-source technologies.<br /><br /> We are an
+            official local community verified by the Ubuntu LoCo Council. We strive
+            to connect diverse people with Ubuntu and open source as a common interest,
+            organize events, contribute to Ubuntu and related open-source projects,
+            and foster exchanges with various open-source communities both domestically
+            and internationally to expand the reach of Ubuntu and open source.
+        </HeroPhotoOnRight>
+        <HeroPhotoOnLeft
+            title="Forum and Chat"
+            imageSrc={OnlinePlatforms.src}
+            mainButtonLabel={"Forum & Resources"}
+            mainButtonHref={"../ubuntu/docs"}
+            subButtonLabel={"Chat"}
+            subButtonHref={"../chat"}
+        >
+            Through the community-operated forum and chat channels, you can ask
+            questions about Ubuntu, receive new updates, and get news about
+            upcoming community events.<br /><br />
+            On the forum, you can ask questions and share resources, and you can
+            also find help by referring to existing Q&A records and materials posted
+            by other members.<br /><br />
+            You can also communicate quickly with other community members through
+            chat platforms like Matrix and Discord.
+        </HeroPhotoOnLeft>
+        <HeroPhotoOnRight
+            title="In-person Events"
+            imageSrc={UbuConKoreaPhoto.src}
+            mainButtonLabel={"Learn More"}
+            mainButtonHref={"../events"}
+        >
+            Various Ubuntu-related events, both large and small, are held
+            periodically. From the annual general meeting and UbuCon Korea to
+            hands-on workshops, and Global Jams where members contribute to
+            Ubuntu projects together, a variety of events are held not only in
+            the Seoul metropolitan area but also in various regions such as
+            Busan, Pohang, and Daejeon.
+        </HeroPhotoOnRight>
+        <HeroPhotoOnLeft
+            title="Exchange with Other Communities in Korea and Abroad"
+            imageSrc={Uck25CommunityBooth.src}
+            mainButtonLabel={"Ubuntu Local Communities"}
+            mainButtonHref={"https://ubuntu.com/community/local-communities"}
+            subButtonLabel={"UbuCon Asia"}
+            subButtonHref={"https://www.ubucon.asia"}
+        >
+            We engage in exchanges and joint events with various domestic
+            open-source communities such as OpenInfra Korea User Group, .NET
+            Dev, C++ Korea, Debian Korea, and Golang Korea. We also interact
+            with international open-source communities like Ubuntu Taiwan,
+            Ubuntu Malaysia, Ubuntu Nepal, Ubuntu India, and FOSSASIA, and
+            participate in UbuCon Asia, a platform for exchange among Ubuntu
+            communities in Asia.
+        </HeroPhotoOnLeft>
+        <HeroPhotoOnRight
+            title="Expending Ubuntu and Open Source Reach and Activate Contributions"
+            imageSrc={GlobalJamsPhoto.src}
+        >
+            As Ubuntu is an open-source project, many contributors are needed to
+            improve it and make it more user-friendly.<br />Our community
+            engages in various activities to activate contributions to Ubuntu,
+            such as translation contributions, bug reporting, QA/testing, and
+            documentation. These include Global Jams events, release note
+            translations, and mentoring through the Open Source Contribution
+            Academy. <br />The community also carries out its own group studies
+            and projects. In the past, projects such as HanJP-IM and Cobuntu
+            were undertaken.
+        </HeroPhotoOnRight>
+    </section>
+</PageLayout>
