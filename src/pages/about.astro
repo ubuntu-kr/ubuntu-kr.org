@@ -10,6 +10,8 @@ import HeroPhotoOnRight from "@/components/HeroPhotoOnRight.astro";
 import UbuntuKrTagLogo from "@/assets/UbuntuKrTitleShort.svg";
 import OnlinePlatforms from "@/assets/online_platforms.svg";
 import UbuConKoreaPhoto from "@/assets/uck25_people.jpg";
+import GlobalJamsPhoto from "@/assets/events/globaljams.jpg";
+import Uck25CommunityBooth from "@/assets/uck25_community.jpg";
 ---
 
 <PageLayout
@@ -81,6 +83,34 @@ import UbuConKoreaPhoto from "@/assets/uck25_people.jpg";
             워크샵, 함께 우분투 프로젝트에 기여하는 모임인 Global Jams 등 다양한
             행사가 있으며, 수도권 뿐만 아니라 부산과 포항 및 대전 등 다양한
             지역에서 열리고 있습니다.
+        </HeroPhotoOnRight>
+        <HeroPhotoOnLeft
+            title="국내외 다른 커뮤니티와의 교류"
+            imageSrc={Uck25CommunityBooth.src}
+            mainButtonLabel={"우분투 로컬 커뮤니티"}
+            mainButtonHref={"https://ubuntu.com/community/local-communities"}
+            subButtonLabel={"UbuCon Asia"}
+            subButtonHref={"https://www.ubucon.asia"}
+        >
+            OpenInfra Korea User Group, .NET Dev, C++ Korea, Debian Korea,
+            Golang Korea등 다양한 국내 오픈소스 커뮤니티와 교류 및 연합 행사
+            등을 진행하고 있습니다. Ubuntu Taiwan, Ubuntu Malaysia, Ubuntu
+            Nepal, Ubuntu India, FOSSASIA 등 해외 오픈소스 커뮤니티와도 교류하고
+            있으며, 아시아 지역 우분투 커뮤니티 교류의 장인 UbuCon Asia에도
+            참여하고 있습니다.
+        </HeroPhotoOnLeft>
+        <HeroPhotoOnRight
+            title="우분투와 오픈소스 저변확대 및 기여 활성화를 위한 활동"
+            imageSrc={GlobalJamsPhoto.src}
+        >
+            우분투는 오픈소스 프로젝트이기도 한 만큼, 기여에 참여하는 사람들이
+            많이 있어야 더 쓰기 좋게 개선될 수 있습니다.<br />우리
+            커뮤니티에서는 우분투 번역 기여, 버그 리포팅, QA/테스팅, 문서 등
+            다양한 방법으로 우분투에 대한 기여 활성화를 위해 Global Jams 행사나,
+            릴리즈 노트 번역, 오픈소스 컨트리뷰션 아카데미를 통한 멘토링 등의
+            다양한 활동 또한 전개 중입니다. <br />커뮤니티에서 자체적인 그룹
+            스터디나 프로젝트도 수행합니다. 과거에 HanJP-IM, Cobuntu 등의
+            프로젝트가 수행된 적이 있습니다.
         </HeroPhotoOnRight>
     </section>
 </PageLayout>
