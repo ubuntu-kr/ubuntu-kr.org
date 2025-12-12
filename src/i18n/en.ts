@@ -9,6 +9,7 @@ export default {
     "nav.events": "Events",
     "nav.docs": "Docs",
     "nav.about": "About",
+    "nav.contribute": "Contribute",
     "home.feeds.title": "Latest from our community",
     "home.feeds.forum": "Forum",
     "home.feeds.notice": "Notice",
