@@ -279,84 +279,86 @@ import Sponsors from "@/components/Sponsors.astro";
                     <div class="grid-col-4">
                         <ul class="p-inline-list--middot">
                             <li class="p-inline-list__item">
-                                개발, 번역, QA, 문서화 등으로 기여하기
+                                <a href="contribute">
+                                    개발, 번역, QA, 문서화 등으로 기여하기
+                                </a>
                             </li>
                             <li class="p-inline-list__item">
-                                재정적으로 기여하기
+                                <a href="contribute">재정적으로 기여하기</a>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="grid-row">
-                    <div class="grid-col-6 grid-col-start-large-3">
-                        <hr class="is-muted" />
+                    <div class="grid-row">
+                        <div class="grid-col-6 grid-col-start-large-3">
+                            <hr class="is-muted" />
+                        </div>
                     </div>
-                </div>
-                <div class="grid-row">
-                    <div class="grid-col-2 grid-col-start-large-3">
-                        <h3 class="p-heading--5">소셜미디어 팔로우 하기</h3>
-                    </div>
+                    <div class="grid-row">
+                        <div class="grid-col-2 grid-col-start-large-3">
+                            <h3 class="p-heading--5">소셜미디어 팔로우 하기</h3>
+                        </div>
 
-                    <div class="grid-col-4">
-                        <ul class="p-inline-list--middot">
-                            <li class="p-inline-list__item">
-                                <a
-                                    href={`https://launchpad.net/~${config.socialMedia.launchpad}`}
-                                    >Launchpad</a
-                                >
-                            </li>
-                            <li class="p-inline-list__item">
-                                <a
-                                    href={`https://fb.com/${config.socialMedia.facebook}`}
-                                    >Facebook</a
-                                >
-                            </li>
-                            <li class="p-inline-list__item">
-                                <a
-                                    href={`https://instagram.com/${config.socialMedia.instagram}`}
-                                    >Instagram</a
-                                >
-                            </li>
-                            <li class="p-inline-list__item">
-                                <a
-                                    href={`https://www.linkedin.com/company/${config.socialMedia.linkedin}`}
-                                    >LinkedIn</a
-                                >
-                            </li>
-                            <li class="p-inline-list__item">
-                                <a
-                                    href={`https://x.com/${config.socialMedia.x}`}
-                                    >X</a
-                                >
-                            </li>
-                            <li class="p-inline-list__item">
-                                <a href={`${config.socialMedia.mastodon}`}
-                                    >Mastodon</a
-                                >
-                            </li>
-                            <li class="p-inline-list__item">
-                                <a href={`${config.socialMedia.bluesky}`}
-                                    >BlueSky</a
-                                >
-                            </li>
-                            <li class="p-inline-list__item">
-                                <a
-                                    href={`https://www.youtube.com/user/${config.socialMedia.youtube}`}
-                                    >YouTube</a
-                                >
-                            </li>
-                        </ul>
+                        <div class="grid-col-4">
+                            <ul class="p-inline-list--middot">
+                                <li class="p-inline-list__item">
+                                    <a
+                                        href={`https://launchpad.net/~${config.socialMedia.launchpad}`}
+                                        >Launchpad</a
+                                    >
+                                </li>
+                                <li class="p-inline-list__item">
+                                    <a
+                                        href={`https://fb.com/${config.socialMedia.facebook}`}
+                                        >Facebook</a
+                                    >
+                                </li>
+                                <li class="p-inline-list__item">
+                                    <a
+                                        href={`https://instagram.com/${config.socialMedia.instagram}`}
+                                        >Instagram</a
+                                    >
+                                </li>
+                                <li class="p-inline-list__item">
+                                    <a
+                                        href={`https://www.linkedin.com/company/${config.socialMedia.linkedin}`}
+                                        >LinkedIn</a
+                                    >
+                                </li>
+                                <li class="p-inline-list__item">
+                                    <a
+                                        href={`https://x.com/${config.socialMedia.x}`}
+                                        >X</a
+                                    >
+                                </li>
+                                <li class="p-inline-list__item">
+                                    <a href={`${config.socialMedia.mastodon}`}
+                                        >Mastodon</a
+                                    >
+                                </li>
+                                <li class="p-inline-list__item">
+                                    <a href={`${config.socialMedia.bluesky}`}
+                                        >BlueSky</a
+                                    >
+                                </li>
+                                <li class="p-inline-list__item">
+                                    <a
+                                        href={`https://www.youtube.com/user/${config.socialMedia.youtube}`}
+                                        >YouTube</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="grid-row">
-                    <div class="grid-col-6 grid-col-start-large-3">
-                        <hr class="is-muted" />
+                    <div class="grid-row">
+                        <div class="grid-col-6 grid-col-start-large-3">
+                            <hr class="is-muted" />
+                        </div>
                     </div>
                 </div>
             </div>
+            <section class="p-section p-strip is-dark">
+                <Sponsors />
+            </section>
         </div>
-        <section class="p-section p-strip is-dark">
-            <Sponsors />
-        </section>
     </section>
 </PageLayout>
