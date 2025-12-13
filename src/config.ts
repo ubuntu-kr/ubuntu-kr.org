@@ -72,6 +72,11 @@ export const WebsiteConfig = (lang: keyof typeof ui = defaultLang) => {
           href: translatePath(`/contribute`),
           items: [],
         },
+        {
+          label: t("nav.reg_dis"),
+          href: translatePath(`/regulations_disclosures`),
+          items: [],
+        },
       ],
 
       rightMenu: (page: { path: string; i18n: boolean }) => {

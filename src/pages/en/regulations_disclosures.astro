@@ -1,0 +1,270 @@
+---
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+const { lang } = Astro.props;
+const config = WebsiteConfig(lang as keyof typeof languages);
+
+import PageLayout from "@/layouts/PageLayout.astro";
+---
+
+<PageLayout
+    title={"Regulations & Disclosures"}
+    description={"See Ubuntu Korea Community policies, bylaws, and disclosures."}
+>
+    <div class="p-section--hero p-strip is-dark">
+        <hr class="p-rule is-fixed-width" />
+
+        <div class="grid-row">
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <h2>Regulations and code of conduct</h2>
+            </div>
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <div class="p-section--shallow">
+                    <p>
+                        Policies and codes everyone should follow when
+                        participating in the Ubuntu Korea Community.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="p-pricing-block">
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Ubuntu Code of Conduct
+                            <br />
+
+                            <span class="u-text--muted">v2.0</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/ethos/code-of-conduct/"
+                        ><button>Korean (translated)</button></a
+                    >
+                    <a href="https://ubuntu.com/community/ethos/code-of-conduct"
+                        ><button>English (original)</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Diversity policy
+                            <br />
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/ethos/diversity/"
+                        ><button>Korean (translated)</button></a
+                    >
+                    <a href="https://ubuntu.com/community/ethos/diversity"
+                        ><button>English (original)</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Our mission
+                            <br />
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/ethos/mission/"
+                        ><button>Korean (translated)</button></a
+                    >
+                    <a href="https://ubuntu.com/community/docs/ethos/mission"
+                        ><button>English (original)</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Ubuntu Korea Community Articles of incorporation
+                            <br />
+
+                            <span class="u-text--muted"
+                                >Foundational rules for organization and
+                                activity
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/articles-of-incorporation/"
+                        ><button>View document</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Election bylaws
+                            <br />
+
+                            <span class="u-text--muted"
+                                >Rules for electing our president
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/election-bylaw/"
+                        ><button>View document</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Membership fee regulations
+                            <br />
+
+                            <span class="u-text--muted"
+                                >Rules on membership fee payments
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/membership-fee-regulation/"
+                        ><button>View document</button></a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-section--hero p-strip is-dark">
+        <hr class="p-rule is-fixed-width" />
+
+        <div class="grid-row">
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <h2>Disclosures</h2>
+            </div>
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <div class="p-section--shallow">
+                    <p>Information disclosed for community transparency.</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-pricing-block">
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Organizers
+                            <br />
+
+                            <span class="u-text--muted"
+                                >See the current organizing team</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/organizers/"
+                        ><button>Learn more</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Meeting minutes
+                            <br />
+
+                            <span class="u-text--muted"
+                                >Minutes from general meetings and the steering
+                                committee</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/meetings/"
+                        ><button>Learn more</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Financials
+                            <br />
+
+                            <span class="u-text--muted"
+                                >Community budgets and settlements</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/finance/"
+                        ><button>Learn more</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Privacy policy
+                            <br />
+
+                            <span class="u-text--muted"
+                                >Privacy notices for online spaces and offline
+                                events</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/privacy-policy/"
+                        ><button>Learn more</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            Visit the disclosures site
+                            <br />
+
+                            <span class="u-text--muted"
+                                >disclosures.ubuntu-kr.org</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/"
+                        ><button>Visit</button></a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</PageLayout>

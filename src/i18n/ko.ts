@@ -10,6 +10,7 @@ export default {
     "nav.docs": "문서",
     "nav.about": "소개",
     "nav.contribute": "기여하기",
+    "nav.reg_dis": "규정 & 공시",
     "home.feeds.title": "커뮤니티 최근 게시물 ",
     "home.feeds.forum": "포럼",
     "home.feeds.notice": "공지사항",

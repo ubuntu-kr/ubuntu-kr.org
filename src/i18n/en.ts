@@ -10,6 +10,7 @@ export default {
     "nav.docs": "Docs",
     "nav.about": "About",
     "nav.contribute": "Contribute",
+    "nav.reg_dis": "Regulations & Disclosures",
     "home.feeds.title": "Latest from our community",
     "home.feeds.forum": "Forum",
     "home.feeds.notice": "Notice",

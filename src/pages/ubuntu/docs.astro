@@ -7,10 +7,7 @@ const config = WebsiteConfig(lang as keyof typeof languages);
 import PageLayout from "@/layouts/PageLayout.astro";
 ---
 
-<PageLayout
-    title={config.metadata.title}
-    description={config.metadata.description}
->
+<PageLayout title={"문서"} description={"우분투 관련 각종 문서 모음"}>
     <div class="p-section--hero p-strip is-dark">
         <hr class="p-rule is-fixed-width" />
 

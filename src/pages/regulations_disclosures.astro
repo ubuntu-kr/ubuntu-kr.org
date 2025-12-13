@@ -1,0 +1,275 @@
+---
+import { WebsiteConfig } from "@/config";
+import { languages } from "@/i18n/ui";
+const { lang } = Astro.props;
+const config = WebsiteConfig(lang as keyof typeof languages);
+
+import PageLayout from "@/layouts/PageLayout.astro";
+---
+
+<PageLayout
+    title={"규정 및 공시"}
+    description={"우분투한국커뮤니티의 각종 규정과 공시를 확인하세요."}
+>
+    <div class="p-section--hero p-strip is-dark">
+        <hr class="p-rule is-fixed-width" />
+
+        <div class="grid-row">
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <h2>규정 및 행동강령</h2>
+            </div>
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <div class="p-section--shallow">
+                    <p>
+                        우분투한국커뮤니티에서 활동하려면 지켜야 할 각종 규정과
+                        행동강령 입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="p-pricing-block">
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            우분투 행동강령
+                            <br />
+
+                            <span class="u-text--muted">v2.0</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/ethos/code-of-conduct/"
+                        ><button>한국어(번역)</button></a
+                    >
+                    <a href="https://ubuntu.com/community/ethos/code-of-conduct"
+                        ><button>영어(원문)</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            다양성 정책
+                            <br />
+
+                            <span class="u-text--muted">Diversity policy</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/ethos/diversity/"
+                        ><button>한국어(번역)</button></a
+                    >
+                    <a href="https://ubuntu.com/community/ethos/diversity"
+                        ><button>영어(원문)</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            우리의 사명
+                            <br />
+
+                            <span class="u-text--muted">Our Mission</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/ethos/mission/"
+                        ><button>한국어(번역)</button></a
+                    >
+                    <a href="https://ubuntu.com/community/docs/ethos/mission"
+                        ><button>영어(원문)</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            우분투한국커뮤니티 정관
+                            <br />
+
+                            <span class="u-text--muted"
+                                >커뮤니티 조직 및 활동 기본사항 규정
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/articles-of-incorporation/"
+                        ><button>본문 확인</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            선거관리규약
+                            <br />
+
+                            <span class="u-text--muted"
+                                >대표 선거 방법 규정
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/election-bylaw/"
+                        ><button>본문 확인</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            회비규정
+                            <br />
+
+                            <span class="u-text--muted"
+                                >회비 납부 사항 규정
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a
+                        href="https://disclosures.ubuntu-kr.org/legal/membership-fee-regulation/"
+                        ><button>본문 확인</button></a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-section--hero p-strip is-dark">
+        <hr class="p-rule is-fixed-width" />
+
+        <div class="grid-row">
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <h2>공시</h2>
+            </div>
+            <div class="grid-col-4 grid-col-medium-4 grid-col-small-4">
+                <div class="p-section--shallow">
+                    <p>
+                        커뮤니티 운영 투명성을 위해 공시되는 각종 정보를 확인할
+                        수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="p-pricing-block">
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            운영진
+                            <br />
+
+                            <span class="u-text--muted"
+                                >커뮤니티 운영진 구성 확인</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/organizers/"
+                        ><button>더 알아보기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            회의록
+                            <br />
+
+                            <span class="u-text--muted"
+                                >총회 및 운영위원회 회의록 확인</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/meetings/"
+                        ><button>더 알아보기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            회계자료
+                            <br />
+
+                            <span class="u-text--muted"
+                                >커뮤니티 예산/결산 확인</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/finance/"
+                        ><button>더 알아보기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier"></div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            개인정보 처리방침
+                            <br />
+
+                            <span class="u-text--muted"
+                                >커뮤니티 온라인 공간, 오프라인 행사 등 용도별
+                                개인정보 처리방침 확인하기</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/privacy-policy/"
+                        ><button>더 알아보기</button></a
+                    >
+                </div>
+            </div>
+            <div class="p-pricing-block__tier">
+                <div class="p-pricing-block__section">
+                    <div class="p-section--shallow">
+                        <h3 class="p-heading--4">
+                            공시 웹사이트 방문
+                            <br />
+
+                            <span class="u-text--muted"
+                                >disclosures.ubuntu-kr.org</span
+                            >
+                        </h3>
+                    </div>
+                </div>
+                <div class="p-pricing-block__section">
+                    <a href="https://disclosures.ubuntu-kr.org/"
+                        ><button>방문하기</button></a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</PageLayout>
