@@ -8,7 +8,7 @@ import { languages, defaultLang, showDefaultLang } from "@/i18n/ui";
 export const WebsiteConfig = (lang: keyof typeof ui = defaultLang) => {
   const t = useTranslations(lang);
   const translatePath = useTranslatedPath(lang);
-  const siteUrl = "https://2025.ubuntu-kr.org";
+  const siteUrl = "https://ubuntu-kr.org";
   const socialMedia = {
     facebook: "ubuntukorea",
     x: "UbuntuKrOrg",
