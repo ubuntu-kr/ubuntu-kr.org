@@ -55,7 +55,7 @@ export default {
     "website.description":
       "We are a community in Korea for everyone who loves Ubuntu and Open source. \
     And also a local community verified by the Ubuntu LoCo Council.\
-    By organizing local events and gatherings, as wells as activities to encourage open source contribution and \
+    By organizing local events and gatherings, as well as activities to encourage open source contribution and \
     collaborating with various domestic and international open source communities, \
     We spread Ubuntu and open source and also connect people with these in common.",
     "footer.copyright":
