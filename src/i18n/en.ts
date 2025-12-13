@@ -19,6 +19,38 @@ export default {
     "home.events.empty": "There are no planned events currently",
     "banner.sponsors": "Sponsors & Partners",
     "banner.blog": "Recent Updates",
+    "home.ubuntu.title": "Try Ubuntu",
+    "home.ubuntu.description":
+      "Ubuntu began with a mission to bring Free Software to everyone. Built together by Canonical and the global Ubuntu community, Ubuntu is a Linux-based open source OS and project. Starting from an easy-to-use desktop, today you can find Ubuntu across servers, cloud, WSL, embedded devices, and containers—the world's most widely used Linux distribution.",
+    "home.ubuntu.ctaPrompt":
+      "Start using Ubuntu today on the platform you prefer.",
+    "home.ubuntu.cta": "Download Ubuntu",
+    "home.ubuntu.desktop": "Desktop ›",
+    "home.ubuntu.server": "Server ›",
+    "home.ubuntu.wsl": "WSL ›",
+    "home.ubuntu.cloud": "Cloud ›",
+    "home.ubuntu.container": "Container ›",
+    "home.ubuntu.embedded": "Embedded (Ubuntu Core) ›",
+    "home.community.title": "Get involved with the community",
+    "home.community.about": "Learn more about the Ubuntu Korea Community.",
+    "home.community.aboutLink": "About the community ›",
+    "home.community.online.title": "Join online",
+    "home.community.online.forum": "Forum (Discourse)",
+    "home.community.online.chat": "Chat (Matrix, Discord)",
+    "home.community.online.mailinglist": "Mailing list",
+    "home.community.offline.title": "Join offline",
+    "home.community.offline.events":
+      "Attend events like seminars, conferences, and workshops",
+    "home.community.offline.meetups":
+      "Join projects, study groups, or mentoring meetups",
+    "home.community.resources.title": "Browse resources",
+    "home.community.resources.docs":
+      "Find Ubuntu/community reference materials",
+    "home.community.contribute.title": "Contribute",
+    "home.community.contribute.dev":
+      "Contribute with development, translation, QA, or documentation",
+    "home.community.contribute.financial": "Support financially",
+    "home.community.follow.title": "Follow us on social media",
     "website.title": "Ubuntu Korea Community",
     "website.description":
       "We are a community in Korea for everyone who loves Ubuntu and Open source. \
