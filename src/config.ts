@@ -19,7 +19,7 @@ export const WebsiteConfig = (lang: keyof typeof ui = defaultLang) => {
     bluesky: "https://bsky.app/profile/ubuntu-kr.org",
     launchpad: "ubuntu-ko",
   } as const;
-  const defaultOgImage = `${siteUrl}/uck24_group_photo.jpg`;
+  const defaultOgImage = `${siteUrl}${Uck24Photo.src}`;
 
   return {
     metadata: {
