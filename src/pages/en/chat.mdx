@@ -1,7 +1,7 @@
 ---
 layout: /src/layouts/MarkdownLayout.astro
-title: "채팅"
-description: "채팅에 참여하여 사람들과 대화하거나 질문 및 답변을 할 수 있습니다."
+title: "Chat"
+description: "Join our chat channels to talk with the community or ask and answer questions."
 ---
 
 import HeroGridOnRight from "@/components/HeroGridOnRight.astro"
@@ -13,61 +13,60 @@ import liberachatlogo from "@/assets/liberachat.svg"
   cards={[
     {
       imgSrc: discordlogo.src,
-      label: "Discord 서버 들어가기",
+      label: "Join Discord server",
       href: "https://discord.gg/sUvF7PAgNd",
     },
     {
       imgSrc: matrixlogo.src,
-      label: "Matrix 스페이스 들어가기 (#loco-kr:ubuntu.com)",
+      label: "Join Matrix space (#loco-kr:ubuntu.com)",
       href: "https://matrix.to/#/#loco-kr:ubuntu.com",
     },
     {
       imgSrc: liberachatlogo.src,
-      label: "IRC (Libera.chat, Kiwi IRC 로 바로 접속)",
+      label: "IRC on Libera.chat (open with Kiwi IRC)",
       href: "http://kiwiirc.com/client/irc.libera.chat/ubuntu-kr",
     },
   ]}>
-  # 익숙한 채팅 서비스로 참여하세요
-  우리 커뮤니티에서는 공식 채팅 채널을 Matrix, Discord, IRC 로 제공하고 있으며, 셋중 편한 것으로 선택하셔서 참여하실 수 있습니다.
+  # Join with your favorite chat service
+  Our community chat is available on Matrix, Discord, and IRC. Pick whichever is most comfortable for you.
 
-  - Matrix: 국내뿐만 아니라 전세계 우분투 커뮤니티에서 공식적으로 사용하는 주요 커뮤니케이션 수단입니다.
-  - Discord: 최근들어 다양한 오픈소스/IT 커뮤니티에서도 활용하는 메신저로, 이미 Discord를 사용 중이시라면 쉽게 채팅에 참여 가능합니다.
-  - IRC: 기존에 우분투 커뮤니티에서 사용하던 채팅 수단입니다. 최근 Matrix 로 이동 중이여서 Matrix 이용을 권장합니다.
+  - Matrix: The main communication channel used by Ubuntu communities worldwide.
+  - Discord: Popular among many open source and tech communities; easy to join if you already use Discord.
+  - IRC: The long-time chat channel for Ubuntu communities. We recommend Matrix as the preferred option going forward.
   </HeroGridOnRight>
 
-# 채널 목록
+# Channel list
 
-아래 채널 목록 표를 참고하여 이용해 주시기 바랍니다. 일부 채널은 서로 다른 메신저 서비와 연동 되거나, 대화 내용이 기록되고 있습니다.
+Use the table below to find the channel you need. Some channels are bridged between platforms or have their logs recorded.
 
-| 채널 용도 | Discord | [Matrix (Element.io)](https://matrix.to/#/#loco-kr:ubuntu.com) | IRC (Libera.chat) | 비고 |
+| Purpose | Discord | [Matrix (Element.io)](https://matrix.to/#/#loco-kr:ubuntu.com) | IRC (Libera.chat) | Notes |
 | -- | -- | -- | -- | -- |
-| 일반적인 대화 및 질의응답 | general | [#loco-kr-general:ubuntu.com](https://matrix.to/#/#loco-kr-general:ubuntu.com) | [#ubuntu-kr](http://kiwiirc.com/client/irc.libera.chat/ubuntu-kr) | [IRC 대화기록 확인하기](irclogs.ubuntu.com)* |
-| 공지사항 채널 | notice | [#loco-kr-notice:ubuntu.com](https://matrix.to/#/#loco-kr-notice:ubuntu.com) | - | - |
-| 번역(L10n)팀 채널 | l10n | [#l10n-ko:ubuntu.com](https://matrix.to/#/#l10n-ko:ubuntu.com) | - | - |
-| UbuCon Korea 참가자 채널 | ubucon-kr | [#ubucon-kr:ubuntu.com](https://matrix.to/#/#ubucon-kr:ubuntu.com) | - | - |
-| 포럼 게시물 피드 채널 | forum-feed | [#loco-kr-forum-feed:ubuntu.com](https://matrix.to/#/#loco-kr-forum-feed:ubuntu.com) | - | - |
+| General chat and Q&A | general | [#loco-kr-general:ubuntu.com](https://matrix.to/#/#loco-kr-general:ubuntu.com) | [#ubuntu-kr](http://kiwiirc.com/client/irc.libera.chat/ubuntu-kr) | [View IRC logs](irclogs.ubuntu.com)* |
+| Announcements | notice | [#loco-kr-notice:ubuntu.com](https://matrix.to/#/#loco-kr-notice:ubuntu.com) | - | - |
+| Translation (L10n) team | l10n | [#l10n-ko:ubuntu.com](https://matrix.to/#/#l10n-ko:ubuntu.com) | - | - |
+| UbuCon Korea participants | ubucon-kr | [#ubucon-kr:ubuntu.com](https://matrix.to/#/#ubucon-kr:ubuntu.com) | - | - |
+| Forum post feed | forum-feed | [#loco-kr-forum-feed:ubuntu.com](https://matrix.to/#/#loco-kr-forum-feed:ubuntu.com) | - | - |
 
 
-> *IRC 의 `#ubuntu-kr` 채널에서의 대화 내역은 Canonical IS 팀이 운영하는 `ubuntulog` 봇에 의해 모두 기록되고 있으며, irclogs.ubuntu.com 에서 IRC 대화 기록을 확인하실 수 있습니다. 또한, 연동된 다른 메신저의 채널에도 IRC 관련 규정이 적용되니 이용에 참고 해 주시기 바랍니다. 
+> *All conversations in the `#ubuntu-kr` IRC channel are logged by the Canonical IS team's `ubuntolog` bot and can be viewed at irclogs.ubuntu.com. IRC rules also apply to any bridged channels on other platforms.
 
-## 메신저간 연동 브릿지 정보
-서로 다른 메신저간 연동을 위해, 아래와 같은 브릿지 서비스를 이용해 연동하고 있습니다. 간혹 서로 다른 메신저간 메시지가 전달이 지연 되거나 전달이 안 되는 경우가 있는데, 브릿지 서비스 관련 문제일 수 있습니다. 아래 링크에서 각 브릿지 서비스 정보와, 서비스 상태를 확인할 수 있습니다.
+## Bridge services between platforms
+To link channels across platforms we use the bridge services below. Delayed or missing messages between platforms can happen if there is an issue with these bridges; check their status for more details.
 
-- t2bot.io: Discord - Matrix 연동: [정보](https://t2bot.io/), [서비스 상태](https://status.t2bot.io/785547346)
-- Libera.chat IRC Bridge: Matrix - IRC 연동: [정보](https://matrix-org.github.io/matrix-appservice-irc/latest/bridged_networks.html), [서비스 상태](https://status.matrix.org/)
+- t2bot.io: Discord–Matrix bridge: [About](https://t2bot.io/), [Status](https://status.t2bot.io/785547346)
+- Libera.chat IRC Bridge: Matrix–IRC bridge: [About](https://matrix-org.github.io/matrix-appservice-irc/latest/bridged_networks.html), [Status](https://status.matrix.org/)
 
-## IRC 이용정보
+## IRC connection info
 
-사용하시는 IRC 클라이언트가 있다면, 아래 정보로 IRC 채널에 접속하여 이용할 수 있습니다. 
+If you use an IRC client, connect with the details below.
 
-- 서버: irc.libera.chat (또는 irc.ubuntu.com - irc.libera.chat 을 가리키는 주소)
-- 포트
-  - 평문 통신: `6665~6667` 또는 `8000~8002`
-  - TLS 암호화 통신: 6697, 7000, 7070
-- 채널: #ubuntu-kr
-- [IRC 이용 정보 자세히 보기](https://wiki.ubuntu-kr.org/index.php/IRC_%EC%9D%B4%EC%9A%A9_%EC%A0%95%EB%B3%B4)
+- Server: irc.libera.chat (or irc.ubuntu.com, which points to irc.libera.chat)
+- Ports
+  - Plain: `6665–6667` or `8000–8002`
+  - TLS: 6697, 7000, 7070
+- Channel: #ubuntu-kr
+- [More about using IRC](https://wiki.ubuntu-kr.org/index.php/IRC_%EC%9D%B4%EC%A9%A9_%EC%A0%95%EB%B3%B4)
 
-IRC 이용시, 아래 규정을 먼저 확인 해 주시기 바랍니다.
-- [IRC 이용 규정](https://wiki.ubuntu.com/KoreanTeam/IRC_Rules)
-- [Ubuntu IRC 채널 이용약관](https://wiki.ubuntu.com/IRC/TermsOfService)
-
+Before joining IRC, please review the rules below:
+- [IRC rules](https://wiki.ubuntu.com/KoreanTeam/IRC_Rules)
+- [Ubuntu IRC channel Terms of Service](https://wiki.ubuntu.com/IRC/TermsOfService)
