@@ -8,6 +8,18 @@ import { languages, defaultLang, showDefaultLang } from "@/i18n/ui";
 export const WebsiteConfig = (lang: keyof typeof ui = defaultLang) => {
   const t = useTranslations(lang);
   const translatePath = useTranslatedPath(lang);
+  const siteUrl = "https://2025.ubuntu-kr.org";
+  const socialMedia = {
+    facebook: "ubuntukorea",
+    x: "UbuntuKrOrg",
+    linkedin: "ubuntu-kr",
+    instagram: "ubuntukrorg",
+    youtube: "UbuntuKorea",
+    mastodon: "https://mastodon.social/@UbuntuKrOrg",
+    bluesky: "https://bsky.app/profile/ubuntu-kr.org",
+    launchpad: "ubuntu-ko",
+  } as const;
+  const defaultOgImage = `${siteUrl}/og.png`;
 
   return {
     metadata: {
@@ -15,17 +27,23 @@ export const WebsiteConfig = (lang: keyof typeof ui = defaultLang) => {
       shortDescription: "",
       description: t("website.description"),
       faviconSrc: UkcLogo.src,
+      openGraph: {
+        title: t("website.title"),
+        siteName: t("website.title"),
+        url: siteUrl,
+        description: t("website.description"),
+        type: "website",
+        image: defaultOgImage,
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: `@${socialMedia.x}`,
+        title: t("website.title"),
+        description: t("website.description"),
+        image: defaultOgImage,
+      },
     },
-    socialMedia: {
-      facebook: "ubuntukorea",
-      x: "UbuntuKrOrg",
-      linkedin: "ubuntu-kr",
-      instagram: "ubuntukrorg",
-      youtube: "UbuntuKorea",
-      mastodon: "https://mastodon.social/@UbuntuKrOrg",
-      bluesky: "https://bsky.app/profile/ubuntu-kr.org",
-      launchpad: "ubuntu-ko",
-    },
+    socialMedia,
     mainPage: {
       heroImageSrc: Uck24Photo.src,
     },

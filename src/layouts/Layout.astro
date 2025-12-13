@@ -3,74 +3,88 @@ import "@/styles/global.scss";
 import { WebsiteConfig } from "@/config";
 import { languages } from "@/i18n/ui";
 export function getStaticPaths() {
-	return Object.keys(languages).map((lang) => ({
-		params: { lang },
-	}));
+    return Object.keys(languages).map((lang) => ({
+        params: { lang },
+    }));
 }
 
 interface Props {
-	title?: string;
-	description?: string;
+    title?: string;
+    description?: string;
+    openGraph?: Partial<{
+        title: string;
+        siteName: string;
+        url: string;
+        description: string;
+        type: string;
+        image: string;
+    }>;
+    twitter?: Partial<{
+        card: string;
+        site: string;
+        title: string;
+        description: string;
+        image: string;
+    }>;
 }
 
-const { title, description } = Astro.props;
+const { title, description, openGraph, twitter } = Astro.props as Props;
 const lang = Astro.params.lang;
 const config = WebsiteConfig(lang as keyof typeof languages);
+const metaTitle = title
+    ? `${title} | ${config.metadata.title}`
+    : config.metadata.title;
+const metaDescription = description ?? config.metadata.description;
+const og = {
+    ...config.metadata.openGraph,
+    title: metaTitle,
+    description: metaDescription,
+    ...(openGraph ?? {}),
+};
+const tw = {
+    ...config.metadata.twitter,
+    title: metaTitle,
+    description: metaDescription,
+    ...(twitter ?? {}),
+};
 ---
 
 <!doctype html>
 <html lang={lang}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content={description ? description : config.metadata.description}
-		/>
-		<meta name="viewport" content="width=device-width" />
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href={config.metadata.faviconSrc}
-		/>
-		<meta property="og:title" content={config.metadata.title} />
-		<meta property="og:site_name" content={config.metadata.title} />
-		<meta property="og:url" content="https://2025.ubuntu-kr.org" />
-		<meta
-			property="og:description"
-			content="8월 9일 Aug 9th | Microsoft Korea 13F"
-		/>
-		<meta property="og:type" content="" />
-		<meta property="og:image" content="https://2025.ubuntu-kr.org/og.png" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={metaDescription} />
+        <meta name="viewport" content="width=device-width" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href={config.metadata.faviconSrc}
+        />
+        <meta property="og:title" content={og.title} />
+        <meta property="og:site_name" content={og.siteName} />
+        <meta property="og:url" content={og.url} />
+        <meta property="og:description" content={og.description} />
+        <meta property="og:type" content={og.type} />
+        <meta property="og:image" content={og.image} />
 
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta
-			name="twitter:site"
-			content=`@${config.socialMedia.x}`
-		/>
-		<meta name="twitter:title" content={config.metadata.title} />
-		<meta
-			name="twitter:description"
-			content="8월 9일 Aug 9th | Microsoft Korea 13F"
-		/>
-		<meta
-			name="twitter:image"
-			content="https://2025.ubuntu-kr.org/og.png"
-		/>
-		<meta name="generator" content={Astro.generator} />
-		<title>
-			{
-				title
-					? `${title} | ${config.metadata.title}`
-					: config.metadata.title
-			}
-		</title>
-	</head>
-	<body>
-		<slot />
-		<script>
-			document.querySelectorAll(".auto-format-datetime").forEach((element) => {
-            element.innerHTML = new Date(element.innerHTML).toLocaleString();
-        });
-		</script>
-	</body>
+        <meta name="twitter:card" content={tw.card} />
+        <meta name="twitter:site" content={tw.site} />
+        <meta name="twitter:title" content={tw.title} />
+        <meta name="twitter:description" content={tw.description} />
+        <meta name="twitter:image" content={tw.image} />
+        <meta name="generator" content={Astro.generator} />
+        <title>{metaTitle}</title>
+    </head>
+    <body>
+        <slot />
+        <script>
+            document
+                .querySelectorAll(".auto-format-datetime")
+                .forEach((element) => {
+                    element.innerHTML = new Date(
+                        element.innerHTML,
+                    ).toLocaleString();
+                });
+        </script>
+    </body>
 </html>
