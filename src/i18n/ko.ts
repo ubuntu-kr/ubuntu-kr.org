@@ -15,6 +15,7 @@ export default {
     "home.feeds.notice": "공지사항",
     "home.feeds.blog": "블로그",
     "home.events.title": "다가오는 커뮤니티 행사",
+    "home.events.empty": "현재 예정된 행사가 없습니다",
     "banner.sponsors": "후원사 & 파트너",
     "banner.blog": "최근 소식",
     "website.title": "우분투한국커뮤니티",

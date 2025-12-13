@@ -15,6 +15,7 @@ export default {
     "home.feeds.notice": "Notice",
     "home.feeds.blog": "Blog",
     "home.events.title": "Upcoming community events",
+    "home.events.empty": "There are no planned events currently",
     "banner.sponsors": "Sponsors & Partners",
     "banner.blog": "Recent Updates",
     "website.title": "Ubuntu Korea Community",
