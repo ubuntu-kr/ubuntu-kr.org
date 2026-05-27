@@ -1,6 +1,7 @@
 
 import doorayLogo from "@/assets/sponsors/dooray.png";
 import openUpLogo from "@/assets/sponsors/openup.png";
+import qtLogo from "@/assets/sponsors/qt.svg";
 
 export const sponsors = [
     {
@@ -26,4 +27,17 @@ export const sponsors = [
 - 지난 UbuCon Asia 2021에 Bronze 후원사로 참여하였습니다.
    `
     },
+    {
+        name: "Qt Group",
+        logoUrl: qtLogo.src,
+        url: "https://www.qt.io",
+        description: `Qt Group은 핀란드에 본사를 둔 글로벌 소프트웨어 기업으로, UI 디자인부터 소프트웨어 개발, 임베디드 시스템 최적화, 품질 관리에 이르기까지 제품 개발 전 과정을 지원하는 솔루션을 제공합니다. 특히 Qt 개발 프레임워크(Qt Framework)는 Linux/Ubuntu를 포함한 다양한 운영체제와 플랫폼에서 동작하는 애플리케이션 개발을 지원하며, 전 세계 150만 명 이상의 개발자들이 차량용 인포테인먼트 시스템(IVI), 산업 자동화, 의료 기기, 가전제품 등 70여 개 산업군에서 핵심 소프트웨어를 개발하는 데 활용하고 있습니다.
+
+자세한 내용은 [www.qt.io](https://www.qt.io)에서 확인할 수 있습니다.
+
+## 후원 세부사항
+
+- 2026년 현재 우분투한국커뮤니티 인프라 운영 비용을 제공하고 있습니다.
+    `
+    }
 ]
