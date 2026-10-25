@@ -26,9 +26,10 @@ interface Props {
         description: string;
         image: string;
     }>;
+    bodyClass?: string;
 }
 
-const { title, description, openGraph, twitter } = Astro.props as Props;
+const { title, description, openGraph, twitter, bodyClass } = Astro.props as Props;
 const lang = Astro.params.lang;
 const config = WebsiteConfig(lang as keyof typeof languages);
 const metaTitle = title
@@ -75,7 +76,7 @@ const tw = {
         <meta name="generator" content={Astro.generator} />
         <title>{metaTitle}</title>
     </head>
-    <body>
+    <body class={bodyClass}>
         <slot />
         <script>
             document
